@@ -8,8 +8,25 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'sign-in',
     pathMatch: 'full'
+  },
+  {
+    path: 'sign-in',
+    loadChildren: () => import('./sign-in/sign-in.module').then( m => m.SignInPageModule)
+  },
+  {
+    path: 'tratamientos',
+    children: [
+      {
+        path: "",
+        loadChildren: () => import('./tratamientos/tratamientos.module').then( m => m.TratamientosPageModule)
+      },
+      {
+        path: ":userId",
+        loadChildren: () => import('./tratamientos/perfi/perfi.module').then(m => m.PerfiPageModule)
+      }
+    ]
   },
 ];
 

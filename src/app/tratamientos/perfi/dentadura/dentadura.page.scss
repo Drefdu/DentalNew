@@ -1,0 +1,42 @@
+#container-main{
+    width: 90%;
+    background-color: rgba($color: #ffffff, $alpha: 0.9);
+    
+}
+#container-fondo{
+    background-image: url(../../../../assets/Fondo-dientes.jpg);
+    background-size: 40%;
+}
+
+///mio
+
+ion-col {
+  //background-color: #b1b1b1;
+  //border: solid 1px #a53939;
+  color: #25aadf;
+  //height: 5%;
+  //text-align: center;
+  //width: 30%;
+}
+.cardD{
+background-color: #007bff;
+position: relative;
+border-radius: 10px;
+//height: auto;
+}
+.dos{
+  flex-basis: 35%;
+}
+
+.tres{
+  flex-basis: 65%;
+}
+
+.cuatro{
+  flex-basis: 40%;
+  color: #ffffff;
+}
+
+.cinco{
+  flex-basis: 60%;
+}

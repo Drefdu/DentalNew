@@ -1,0 +1,104 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-avatar slot="start" class="ion-padding">
+        <img
+          alt="Silhouette of a person's head"
+          src="https://ionicframework.com/docs/img/demos/avatar.svg"
+        />
+      </ion-avatar>
+      <ion-title>
+        <h5>Eduardo Arciniega</h5>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="">
+    <ion-list>
+      <ion-item lines="none" href="/home">
+        <ion-icon name="home" slot="start"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-item>
+      <!-- <ion-item lines="none" href="#">
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>Calendario</ion-label>
+      </ion-item> -->
+      <ion-item lines="none" href="/tratamientos">
+        <ion-icon name="bandage" slot="start"></ion-icon>
+        <ion-label>Tratamientos</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        <img
+          alt="Silhouette of a person's head"
+          src="../../assets/diente.png"
+          width="25px"
+        />
+      </ion-buttons>
+      <ion-title>Tratamientos pendientes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      id="container-main"
+    >
+      <div id="container-list">
+        <ion-list color="secondary">
+          <ion-item
+            *ngFor="let user of users"
+            color="secondary"
+            [routerLink]="[user.id]"
+          >
+            <ion-thumbnail slot="start" size="large">
+              <img
+                alt="Silhouette of mountains"
+                src="https://yt3.googleusercontent.com/ytc/AGIKgqN45Y8vO6efmGr5P68UKjmPT-cqMWBAYZjEVjpb=s900-c-k-c0x00ffffff-no-rj"
+              />
+            </ion-thumbnail>
+            <ion-label>
+              <div class="row">
+                <div class="col-12">
+                  <p class="fs-6 fw-bold">{{user.name}}</p>
+                </div>
+                <div class="row">
+                  <div class="col-6 col-sm-2 col-lg-1">
+                    <p>Edad: 20</p>
+                  </div>
+                  <div class="col-6 col-sm-2 col-lg-1">
+                    <p>Sexo: M</p>
+                  </div>
+                  <div class="col-12 col-sm-2 col-lg-1 fw-bold">
+                    <p>Sesionesl 3/4</p>
+                  </div>
+                </div>
+              </div>
+              <ion-label>
+                <div
+                  class="progress"
+                  role="progressbar"
+                  aria-label="Animated striped example"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                >
+                  <div
+                    class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                    style="width: 75%"
+                  >
+                    75%
+                  </div>
+                </div>
+              </ion-label>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </ion-content>
+</div>

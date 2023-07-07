@@ -1,0 +1,292 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-avatar slot="start" class="ion-padding">
+        <img
+          alt="Silhouette of a person's head"
+          src="https://ionicframework.com/docs/img/demos/avatar.svg"
+        />
+      </ion-avatar>
+      <ion-title>
+        <h5>{{user.name}}</h5>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="">
+    <ion-list>
+      <ion-item lines="none" href="/home">
+        <ion-icon name="home" slot="start"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-item>
+      <!-- <ion-item lines="none" href="#">
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>Calendario</ion-label>
+      </ion-item> -->
+      <ion-item lines="none" href="/tratamientos">
+        <ion-icon name="bandage" slot="start"></ion-icon>
+        <ion-label>Tratamientos</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        <ion-back-button defaultHref="/tratamientos"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<div class="ion-page" id="main-content">
+  <ion-content>
+    <div class="d-flex justify-content-center">
+      <div class="header">
+        <div>
+          <div class="d-flex justify-content-center">
+            <ion-label>
+              <ion-text>
+                <h1>{{user.name}}</h1>
+              </ion-text>
+            </ion-label>
+          </div>
+          <div class="d-flex justify-content-center mt-3">
+            <ion-avatar>
+              <img
+                alt="Silhouette of a person's head"
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+                width="30px"
+              />
+            </ion-avatar>
+          </div>
+        </div>
+        <div class="mt-3">
+          <p>Id del paciente:{{user.id}}</p>
+          <p>Direcciones del paciente: {{user.address.street}}</p>
+          <p>Correo electronico: {{user.email}}</p>
+          <p>Edad:</p>
+          <p>Sesiones: 3/4</p>
+          <ion-label>
+            <div
+              class="progress"
+              role="progressbar"
+              aria-label="Animated striped example"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                style="width: 75%"
+              >
+                75%
+              </div>
+            </div>
+          </ion-label>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center"> 
+      <div class="fondo h-100" id="container-info">
+        <div class="d-flex justify-content-center">
+          <div class="p-0 w-75">
+            <ion-segment
+              class="pantallas"
+              [(ngModel)]="selectTabs"
+              value="default"
+            >
+              <ion-segment-button value="galeria">
+                <ion-label>Galeria</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="datos">
+                <ion-label>Datos</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </div>
+        </div>
+        <div *ngIf="selectTabs == 'galeria'">
+          <div class="">
+            <div class="">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    2 de julio de 2023
+                    <div class="date d-flex justify-content-center">
+                     <div>
+                      <br />
+                      <img
+                        class="image"
+                        src="https://i.pinimg.com/originals/0c/ec/e5/0cece586c954083d42b0b97080d0dfc4.jpg"
+                        alt="Imagen de diente 1"
+                      />
+                      <img
+                        class="image"
+                        src="https://img.freepik.com/vector-premium/dibujos-animados-lindos-pequenos-dientes-cepillandose-dientes-cepillo-dientes_122297-1054.jpg?w=2000"
+                        alt="Imagen de diente 2"
+                      />
+                      <img
+                        class="image"
+                        src="https://previews.123rf.com/images/perysty/perysty1302/perysty130200094/18056647-dibujado-a-mano-ilustraci%C3%B3n-dibujo-de-los-dientes.jpg"
+                        alt="Imagen de diente 3"
+                      />
+                     </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                <!-- <ion-row>
+                <ion-col><div class="date"> 5 de marzo de 2020 <br>
+                  <img class="image" src="https://i.pinimg.com/originals/0c/ec/e5/0cece586c954083d42b0b97080d0dfc4.jpg" alt="Imagen de diente 1">
+                  <img class="image" src="https://img.freepik.com/vector-premium/dibujos-animados-lindos-pequenos-dientes-cepillandose-dientes-cepillo-dientes_122297-1054.jpg?w=2000" alt="Imagen de diente 2">
+                  <img class="image" src="https://previews.123rf.com/images/perysty/perysty1302/perysty130200094/18056647-dibujado-a-mano-ilustraci%C3%B3n-dibujo-de-los-dientes.jpg" alt="Imagen de diente 3">
+                  </div></ion-col>
+              </ion-row> -->
+              </ion-grid>
+            </div>
+          </div>
+          <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+            <ion-fab-button>
+              <ion-icon name="chevron-up-circle"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="top">
+              <ion-fab-button>
+                <ion-icon name="calendar-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+          </ion-fab>
+          <!-- <div class="zonaBoton">
+            <ion-col><ion-button class="buttonMore"><ion-icon name="add-circle-outline"></ion-icon></ion-button></ion-col>
+          </div> -->
+        </div>
+        <div *ngIf="selectTabs == 'datos'">
+          <div class="">
+            <div class="info-label p-3">
+              Información
+              <p>Edad:??</p>
+              <p>Genero:??</p>
+              <p>Diagnostico:??</p>
+              <p>Fecha de la cita</p>
+            </div>
+            <!--Aqui va nuestra informacion si tuvieramos info-->
+          </div>
+          <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+            <ion-fab-button>
+              <ion-icon name="chevron-up-circle"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="top">
+              <ion-button expand="block" (click)="setOpen(true)"
+                ><ion-icon name="calendar-outline"></ion-icon
+              ></ion-button>
+              <ion-modal [isOpen]="isModalOpen">
+                <ng-template>
+                  <ion-header>
+                    <ion-toolbar>
+                      <ion-buttons slot="start">
+                        <ion-button (click)="setOpen(false)"
+                          >Confirmar</ion-button
+                        >
+                      </ion-buttons>
+                      <ion-title>Cita</ion-title>
+                      <ion-buttons slot="end">
+                        <ion-button (click)="setOpen(false)">Close</ion-button>
+                      </ion-buttons>
+                    </ion-toolbar>
+                  </ion-header>
+                  <ion-content class="ion-padding">
+                    <h1>Diente [Nombre]</h1>
+                    <ion-card class="cardD">
+                      <ion-grid>
+                        <ion-row>
+                          <ion-col
+                            ><ion-input
+                              label="Estado"
+                              label-placement="floating"
+                              fill="solid"
+                            ></ion-input
+                          ></ion-col>
+                          <ion-col
+                            ><ion-input
+                              label="Ultima revision"
+                              label-placement="floating"
+                              fill="solid"
+                            ></ion-input
+                          ></ion-col>
+                        </ion-row>
+                        <ion-row>
+                          <ion-col>
+                            <ion-item>
+                              <ion-select
+                                label="Procedimientos"
+                                placeholder="select"
+                              >
+                                <ion-select-option value=""
+                                  >opt1</ion-select-option
+                                >
+                                <ion-select-option value=""
+                                  >opt2</ion-select-option
+                                >
+                                <ion-select-option value=""
+                                  >opt3</ion-select-option
+                                >
+                              </ion-select>
+                            </ion-item>
+                          </ion-col>
+                        </ion-row>
+                        <ion-row class="cajap">
+                          <ion-col><ion-label>Sesion</ion-label></ion-col>
+                          <ion-col
+                            ><ion-input value="      5" class="inp"></ion-input
+                          ></ion-col>
+                          <ion-col><ion-label>de</ion-label></ion-col>
+                          <ion-col
+                            ><ion-input value="     12" class="inp"></ion-input
+                          ></ion-col>
+                          <ion-col><ion-label>Completadas</ion-label></ion-col>
+                        </ion-row>
+                        <ion-row>
+                          <ion-col
+                            ><ion-input
+                              label="Proxima cita"
+                              label-placement="floating"
+                              fill="solid"
+                            ></ion-input
+                          ></ion-col>
+                        </ion-row>
+                        <ion-row>
+                          <ion-col class="calendar-row"
+                            ><ion-datetime
+                              class="calendario"
+                              size="cover"
+                            ></ion-datetime
+                          ></ion-col>
+                        </ion-row>
+                        <ion-row>
+                          <ion-col class="btnrow"
+                            ><ion-button color="light"
+                              >Actualizar</ion-button
+                            ></ion-col
+                          >
+                          <ion-col class="btnrow"
+                            ><ion-button color="light"
+                              >Cancelar</ion-button
+                            ></ion-col
+                          >
+                        </ion-row>
+                      </ion-grid>
+                    </ion-card>
+                  </ion-content>
+                </ng-template>
+              </ion-modal>
+              <ion-fab-button [routerLink]="['mensajes']">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button [routerLink]="['dentadura']">
+                <ion-icon name="reader-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+          </ion-fab>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</div>

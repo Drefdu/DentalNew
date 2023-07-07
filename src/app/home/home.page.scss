@@ -25,3 +25,62 @@
 #container a {
   text-decoration: none;
 }
+
+.card {
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+  border-style: none;
+}
+
+svg {
+  color: rgb(101, 116, 255);
+}
+
+.wrapper {
+  align-items: center;
+  line-height: 1.2;
+  text-align: center;
+  background-color: white;
+  top: 45%;
+  left: 4%;
+  right: 4%;
+  position: absolute;
+  padding: 15px;
+  box-shadow: none;
+  border-radius: 20px;
+}
+
+h1 {
+  margin-top: 2%;
+  margin-bottom: 1%;
+  font-size: 20px;
+  margin-bottom: -5px;
+  font-weight: 500;
+  font-weight: 100;
+  color: rgb(101, 116, 255);
+}
+p {
+  font-size: 10px;
+}
+
+.header {
+  background-image: url(https://img.freepik.com/free-vector/flat-dia-dentista-illustration_23-2149673408.jpg?w=826&t=st=1688655241~exp=1688655841~hmac=c516681a9e82d63353393ff9f60411df4fecbb49f25a3aa8b9e50d7a5c4fdb75);
+  background-size: cover 150%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 55%;
+  background-color: rgb(101, 116, 255);
+  border-radius: 0 0 50px 50px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 5%;
+}
+
+ion-content {
+  --background: #e0dfe6;
+}

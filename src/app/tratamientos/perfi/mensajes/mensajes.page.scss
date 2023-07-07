@@ -1,0 +1,57 @@
+ion-content {
+    --background: #f4f4f4;
+  }
+  
+  .message-item {
+    padding: 10px;
+    //border-bottom: 1px solid #ccc;
+  }
+  
+  .message-item.incoming {
+    text-align: left;
+    background-color: #fff;
+  }
+  
+  .message-item .message-content {
+    font-weight: bold;
+  }
+  
+  .message-item .message-time {
+    font-size: 0.8rem;
+    color: #999;
+  }
+  
+  ion-footer {
+    --background: #fff;
+    --padding-bottom: 10px;
+  }
+  
+  ion-input {
+    flex: 1;
+  }
+  
+  ion-button {
+    margin-right: 10px;
+    position: relative;
+  }
+  
+  .newMessage2{
+    position: fixed;
+    bottom: 0%;
+    // /height: 50%;
+  }
+  
+  // .partM{
+  //   width: 70%;
+  //   background-color: aqua;
+  //   position: absolute;
+  //   //height: auto;
+  // }
+  
+  // .partS{
+  //   width: 10%;
+  //   //right: 0px;
+  //   background-color: brown;
+  //   position: relative;
+  // }
+  

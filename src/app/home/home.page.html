@@ -1,20 +1,154 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-avatar slot="start" class="ion-padding">
+        <img
+          alt="Silhouette of a person's head"
+          src="https://ionicframework.com/docs/img/demos/avatar.svg"
+        />
+      </ion-avatar>
+      <ion-title>
+        <h5>Eduardo Arciniega</h5>
+      </ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  <ion-content class="">
+    <ion-list>
+      <ion-item lines="none" href="/home">
+        <ion-icon name="home" slot="start"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-item>
+      <!-- <ion-item lines="none" href="#">
+        <ion-icon name="star" slot="start"></ion-icon>
+        <ion-label>Calendario</ion-label>
+      </ion-item> -->
+      <ion-item lines="none" href="/tratamientos">
+        <ion-icon name="bandage" slot="start"></ion-icon>
+        <ion-label>Tratamientos</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        <img
+          alt="Silhouette of a person's head"
+          src="../../assets/diente.png"
+          width="25px"
+        />
+      </ion-buttons>
+      <ion-title>Consultorio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="header"></div>
+    <div class="wrapper">
+      <h1>Bienvenido a Consultorio Dental</h1>
+      <br />
+      <div class="row">
+        <div class="col-12 col-lg-6 row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <i class="bi bi-calendar-heart-fill"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50%"
+                  height="50%"
+                  fill="currentColor"
+                  class="bi bi-calendar-heart-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5ZM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+                  /></svg><br />
+                <br />
+                <h6 class="card-subtitle mb-2 text-muted">Agenda tu cita</h6>
+                <p class="card-text">Elige las fechas disponibles</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <i class="bi bi-calendar-heart-fill"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50%"
+                  height="50%"
+                  fill="currentColor"
+                  class="bi bi-bar-chart-steps"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 .5 0zM2 1.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1z"
+                  /></svg><br />
+                <br />
+                <h6 class="card-subtitle mb-2 text-muted">Revisa</h6>
+                <p class="card-text">Tu progreso en tratamiento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br/>
+        <div class="col-12 col-lg-6 row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <i class="bi bi-calendar-heart-fill"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50%"
+                  height="50%"
+                  fill="currentColor"
+                  class="bi bi-chat-left-dots"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                  />
+                  <path
+                    d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+                  /></svg><br />
+                <br />
+                <h6 class="card-subtitle mb-2 text-muted">Comun&iacute;cate</h6>
+                <p class="card-text">Con tu dentista de cabecera</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <i class="bi bi-calendar-heart-fill"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50%"
+                  height="50%"
+                  fill="currentColor"
+                  class="bi bi-clipboard2-pulse"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z"
+                  />
+                  <path
+                    d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12Z"
+                  />
+                  <path
+                    d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128L9.979 5.356Z"
+                  /></svg><br />
+                <br />
+                <h6 class="card-subtitle mb-2 text-muted">Optimiza</h6>
+                <p class="card-text">Tu tiempo para tramitar una cita</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+  </ion-content>
+</div>
