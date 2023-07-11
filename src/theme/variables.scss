@@ -3,6 +3,15 @@
 
 /** Ionic CSS Variables **/
 :root {
+
+  /* Tema principal */
+  --ion-color-dental: #001449;
+	--ion-color-dental-one: #012677;
+	--ion-color-dental-two: #005bc5;
+	--ion-color-dental-three: #00b4fc ;
+	--ion-color-dental-four: #17f9ff;
+	--ion-color-dental-five: #ffff;
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -83,6 +92,14 @@
    */
 
   body {
+
+    --ion-color-dental: #001449;
+    --ion-color-dental-one: #012677;
+    --ion-color-dental-two: #005bc5;
+    --ion-color-dental-three: #00b4fc ;
+    --ion-color-dental-four: #17f9ff;
+    --ion-color-dental-five: #ffff;
+
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
