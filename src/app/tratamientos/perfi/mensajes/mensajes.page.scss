@@ -1,24 +1,69 @@
-ion-content {
-    --background: #f4f4f4;
+  ion-button {
+    margin-right: 10px;
+    position: relative;
+  }
+  
+  .newMessage2{
+    position: fixed;
+    bottom: 0%;
+    // /height: 50%;
+  }
+  
+  ion-content {
+    background: #f4f4f4;
   }
   
   .message-item {
+    //background-color: aqua;
     padding: 10px;
-    //border-bottom: 1px solid #ccc;
+    //background-color: rgb(238, 238, 238);
+    border-radius:none;
+    //border-bottom: 1px solid #ffffff;
   }
   
+
+  //mensaje predeterminado
   .message-item.incoming {
     text-align: left;
-    background-color: #fff;
+    //background-color: #bb1414;
   }
   
-  .message-item .message-content {
-    font-weight: bold;
+  .message-item.outgoing {
+    text-align: right;
+    //background-color: #51a710;
+    
   }
+
+.message-item.incoming .message-content {
+  background-color: #6dd4c7;
+  color: #000;
+  align-self: flex-start;
+  //max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.message-item.outgoing .message-content {
+  background-color: #6dd4c7;
+  color: #000;
+  //con este se modica el de la derecha pero no se queda a la derecha 
+  //queda con un hueco a su lado derecho
+  //max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.message-item .message-time {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 5px;
+}
   
   .message-item .message-time {
     font-size: 0.8rem;
-    color: #999;
+    //color: #999;
   }
   
   ion-footer {
@@ -31,27 +76,6 @@ ion-content {
   }
   
   ion-button {
-    margin-right: 10px;
-    position: relative;
+    margin-left: 10px;
   }
-  
-  .newMessage2{
-    position: fixed;
-    bottom: 0%;
-    // /height: 50%;
-  }
-  
-  // .partM{
-  //   width: 70%;
-  //   background-color: aqua;
-  //   position: absolute;
-  //   //height: auto;
-  // }
-  
-  // .partS{
-  //   width: 10%;
-  //   //right: 0px;
-  //   background-color: brown;
-  //   position: relative;
-  // }
   

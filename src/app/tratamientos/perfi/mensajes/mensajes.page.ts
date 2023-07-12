@@ -22,17 +22,16 @@ export class MensajesPage implements OnInit {
 
   messages: Message[] = [
     {
-      text: 'Me cae mal lalo',
+      text: 'Hola, que tal!!',
       time: '10:00 AM',
       incoming: true
     },
     {
-      text: 'nose!',
+      text: 'me gustaria agendar una cita',
       time: '10:01 AM',
-      incoming: false
+      incoming: true
     }
   ];
-
     
   newMessage: string = '';
   user: any = {};
