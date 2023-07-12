@@ -1,9 +1,30 @@
-#container-main{
-    background-color: aqua;
-    background-image: url(../../assets/Fondo-dientes.jpg);
-    background-size: 40%;
-  }
-  #container-list{
-    width: 90%;
-  }
-  
+#container-main {
+  background-color: aqua;
+  background-image: url(../../assets/Fondo-dientes.jpg);
+  background-size: 40%;
+}
+#container-list {
+  width: 90%;
+}
+
+.content {
+  --background: #e0dfe6;
+}
+
+.lista {
+  background-color: rgb(119, 133, 255);
+}
+
+ion-item:hover {
+  --background: rgb(229, 229, 255) !important;
+  --color: rgb(101, 116, 255);
+
+  -ms-transform: scale(1.03); /* IE 9 */
+  -webkit-transform: scale(1.03); /* Safari 3-8 */
+  transform: scale(1.04);
+  transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+}
