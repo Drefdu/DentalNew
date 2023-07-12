@@ -1,50 +1,59 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <img
-        alt="Silhouette of a person's head"
-        src="../../assets/diente.png"
-        width="35px"
-      />
-    </ion-buttons>
-    <ion-title> Consultorio </ion-title>
-  </ion-toolbar>
-</ion-header>
 <ion-content [fullscreen]="true">
   <div
-    class="h-100 w-100 d-flex justify-content-center align-items-center"
+    class="h-200 w-100 d-flex justify-content-center align-items-center"
     id="container-main"
   >
     <div
-      class="container border rounded align-items-center"
+      class="container align-items-center"
       id="container-secondary"
     >
-      <div class="d-flex justify-content-center mt-5">
-        <ion-text>
-          <p class="text-light fs-1 fw-bold">Inicio de Sesion</p>
-        </ion-text>
+    <div class="d-flex justify-content-center mt-5">
+      <div class="circle">
+        <img src="../../assets/diente.png" alt="hola">
       </div>
+    </div>
+    
       <div class="mb-5 mt-5 text-center">
-        <ion-text>
-          <p class="text-light fs-4 fw-bolder">REGISTRA Y AGENDA TU CITA YA!</p>
+        <ion-text >
+          <p class="fs-4 fw-bolder">REGISTRA Y AGENDA TU CITA YA!</p>
         </ion-text>
       </div>
-      <div class="d-flex justify-content-center align-items-center mt-5 p-5">
-        <div class="">
-          <ion-text>
-            <ion-button expand="block" color="danger" (click)="goToHome()">
-              <ion-icon name="logo-google" slot="start"></ion-icon>
-              Iniciar Sesion con Google
-            </ion-button>
-          </ion-text>
-          <ion-text color="primary">
-            <ion-button>
-              <ion-icon name="logo-facebook" slot="start"></ion-icon>
-              Iniciar Sesion con Facebook</ion-button
-            >
-          </ion-text>
+      <div class="mb-5 mt-5 text-center custom-container">
+        <ion-input label="Correo Electronico" label-placement="floating" fill="outline" placeholder="User@Example.com"></ion-input>
+        <br>
+        <ion-input label="Password" type="password" label-placement="floating" fill="outline" placeholder="*****"></ion-input>
+        <div class="d-flex justify-content-center align-items-center mt-5 p-5">
+          <div class="inputs">
+            <ion-text>
+              <div class="d-flex justify-content-between">
+                <ion-button expand="block" color="danger" (click)="goToHome()" shape="round">
+                  <ion-icon name="logo-google"></ion-icon>
+                </ion-button>
+                <ion-button shape="round">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </ion-button>
+              </div>
+            </ion-text>          
+          </div>
         </div>
       </div>
+
+      
+
+      <!-- <div class="d-flex justify-content-center align-items-center mt-5 p-5">
+        <div class="">
+          <ion-text>
+            <div class="d-flex justify-content-between">
+              <ion-button expand="block" color="danger" (click)="goToHome()" shape="round">
+                <ion-icon name="logo-google"></ion-icon>
+              </ion-button>
+              <ion-button shape="round">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </ion-button>
+            </div>
+          </ion-text>          
+        </div>
+      </div> -->
     </div>
   </div>
 </ion-content>
