@@ -43,7 +43,7 @@
   .wrapper {
     align-items: center;
     line-height: 1.2;
-    text-align: center;
+    text-align: left;
     background-color: rgb(255, 255, 255);
     top: 25%;
     left: 4%;
@@ -55,11 +55,11 @@
   }
   
   h1 {
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 2%;
+    margin-bottom: 3%;
     font-size: 20px;
     margin-bottom: -5px;
-    color: #222222;
+    color: rgb(103, 118, 255);
     margin: 8px;
   }
 
@@ -79,16 +79,19 @@
   }
   
   .header {
+    margin-left: 4%;
+    margin-right: 4%;
     background-image: url(https://files.jotform.com/jufs/VanessaDavid/form_files/undraw_doctors_hwty.5d19e0a05407a2.65386694.png?md5=vedzalHVUpYu3YvzQK1jPg&expires=1689299342);
     background-size: cover 150%;
     background-repeat: no-repeat;
     background-position: center;
+    width: 100%;
     height: 55%;
     border-radius: 0 0 50px 50px;
     display: flex;
     flex-direction: column;
     color: white;
-    padding: 5%;
+    
   }
   
   ion-content {
@@ -105,6 +108,14 @@
 
   }
 
+  input, label, textarea{
+    font-size: 13px;
+  }
+
+  label{
+    color: #686868;
+  }
+
   .editar{
     font-size: 25px;
     margin: 20px;
@@ -113,4 +124,18 @@
 
   .contB{
     background-color:var(--ion-color-primary);
+  }
+
+  h3{
+
+    color: rgb(125, 138, 255);
+  }
+
+  th{
+color: #8c8c8c;
+    font-size: 13px;
+  }
+
+  td{
+    font-size: 13px;
   }

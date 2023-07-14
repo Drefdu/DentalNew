@@ -35,8 +35,8 @@
   }
 
 .message-item.incoming .message-content {
-  background-color: #6dd4c7;
-  color: #000;
+  background-color: rgb(125, 138, 255);
+  color: #ffffff;
   align-self: flex-start;
   //max-width: 70%;
   padding: 10px;
@@ -45,8 +45,8 @@
   line-height: 1.4;
 }
 .message-item.outgoing .message-content {
-  background-color: #6dd4c7;
-  color: #000;
+  background-color: rgb(125, 138, 255);
+  color: #ffffff;
   //con este se modica el de la derecha pero no se queda a la derecha 
   //queda con un hueco a su lado derecho
   //max-width: 70%;
