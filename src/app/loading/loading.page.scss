@@ -1,0 +1,64 @@
+ion-spinner {
+  width: 200px !important;
+  height: 200px !important;
+  --ion-animation-duration: 10s;
+}
+
+p {
+  color: rgb(128, 128, 128);
+}
+
+.spinner-container {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+ion-button[shape="circle"] {
+  --border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  --box-shadow: none;
+  --background: #94a9da5b;
+}
+
+ion-row {
+  text-align: center;
+}
+
+path {
+  fill: #ffffff !important;
+}
+
+img {
+  width: 80%;
+}
+
+.logo {
+  opacity: 1;
+  animation-name: fadeUpDown;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fadeUpDown {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateY(-10px);
+  }
+}
+
+ion-content {
+  padding-left: 8%;
+  padding-right: 8%;
+}
