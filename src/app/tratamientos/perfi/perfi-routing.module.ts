@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'dentadura',
     loadChildren: () => import('./dentadura/dentadura.module').then( m => m.DentaduraPageModule)
+  },
+  {
+    path: 'datos',
+    loadChildren: () => import('./datos/datos.module').then( m => m.DatosPageModule)
   }
 ];
 
