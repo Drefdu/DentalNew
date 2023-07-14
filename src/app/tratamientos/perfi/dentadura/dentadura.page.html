@@ -1,116 +1,22 @@
-<ion-menu contentId="main-content">
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-avatar slot="start" class="ion-padding">
-        <img
-          alt="Silhouette of a person's head"
-          src="https://ionicframework.com/docs/img/demos/avatar.svg"
-        />
-      </ion-avatar>
-      <ion-title>
-        <h5>{{user.name}}</h5>
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="">
-    <ion-list>
-      <ion-item lines="none" href="/home">
-        <ion-icon name="home" slot="start"></ion-icon>
-        <ion-label>Inicio</ion-label>
-      </ion-item>
-      <ion-item lines="none" href="/calendar">
-        <ion-icon name="calendar-number" slot="start"></ion-icon>
-        <ion-label>Calendario</ion-label>
-      </ion-item>
-      <ion-item lines="none" href="/tratamientos">
-        <ion-icon name="bandage" slot="start"></ion-icon>
-        <ion-label>Tratamientos</ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-        <ion-back-button defaultHref="tratamientos/{{userId}}"></ion-back-button>
-      </ion-buttons>
-      <ion-title>Perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
-<ion-content [fullscreen]="true">
-  <div class="vh-100 d-flex justify-content-center bg-primary" id="container-fondo">
-    <div id="container-main" class="h-100">
-      <div class="text-primary">
-        <h2>Historiales dentales.</h2>
-        <p class="text-dark">Por favor, seleciones el diente correspondiente para consultar el historial o hacer modificaciones</p>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tratamientos/{{userId}}"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div class="ion-page mt-3" id="main-content">
+  <ion-content color="primary">
+    <!--Parte blanca  -->
+    <div class="d-flex justify-content-center align-items-end h-100">
+      <!-- Contenido de la parte blanca -->
+      <div id="function-container">
+        <div class="mt-2">
+          <p class="fs-3 title">Haga clic sobre un diente para ver mas hacerca de su estado.</p>
+        </div>
         <div class="d-flex justify-content-center">
-          <div>
-            <img src="../../../../assets/dentadura.png" alt="">
-          </div>
+          <img src="../../../../assets/dentadura.png" alt="">
         </div>
       </div>
     </div>
-  </div>
-
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button>
-      <ion-icon name="add-circle-outline"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-button expand="block" (click)="setOpen(true)"><ion-icon name="calendar-outline"></ion-icon></ion-button>
-<ion-modal  [isOpen]="isModalOpen">
-<ng-template>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Dentadura</ion-title>
-      <ion-buttons slot="end">
-        <ion-button (click)="setOpen(false)">Cerrar</ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
-    <h1>Diente [Nombre]</h1>
-    <h5>A continuacion se muestran las condiciones y el historial dental</h5>
-    <ion-card class="cardD">
-      <ion-grid>
-        <ion-row class="uno">
-          <ion-col class="dos"><ion-item><ion-label>Estado</ion-label></ion-item></ion-col>
-          <ion-col class="tres"><ion-input label="Descripcion" label-placement="floating" fill="solid"></ion-input></ion-col>
-        </ion-row>
-        <ion-row class="uno">
-          <ion-col class="dos"><ion-item><ion-label>Procedimientos</ion-label></ion-item></ion-col>
-          <ion-col class="tres"><ion-input label="Descripcion" label-placement="floating" fill="solid"></ion-input></ion-col>
-        </ion-row>
-        <ion-row class="uno">
-          <ion-col class="dos"><ion-item><ion-label>Ult. Revision</ion-label></ion-item></ion-col>
-          <ion-col class="tres"><ion-input label="Descripcion" label-placement="floating" fill="solid"></ion-input></ion-col>
-        </ion-row>
-        <ion-row class="uno">
-          <ion-col class="dos"><ion-item><ion-label>Pendiente</ion-label></ion-item></ion-col>
-          <ion-col class="tres"><ion-input label="Descripcion" label-placement="floating" fill="solid"></ion-input></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="btnrow"><ion-button color="light">Modificar</ion-button></ion-col>
-          <ion-col class="btnrow"><ion-button color="light">Agregar</ion-button></ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-grid>
-        <ion-row class="uno">
-          <ion-col class="cuatro">
-                <h1>Doctor:</h1>
-                <p>Recuerde registrar los procedimientos realizados durante la consulta en
-                  Agregar
-                </p>
-                <br>
-                <p>Si un dato es erroneo, puede modificarlo en Modificar</p></ion-col>
-          <ion-col class="cinco"><img src="https://cdn.pixabay.com/photo/2018/03/22/05/52/dentist-3249382_1280.png" alt="Diente"></ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card>
   </ion-content>
-</ng-template>
-</ion-modal>
-    </ion-fab-list>
-  </ion-fab>
-</ion-content>

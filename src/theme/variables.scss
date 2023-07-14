@@ -4,16 +4,9 @@
 /** Ionic CSS Variables **/
 :root {
 
-  /* Tema principal */
-  --ion-color-dental: #001449;
-	--ion-color-dental-one: #012677;
-	--ion-color-dental-two: #005bc5;
-	--ion-color-dental-three: #00b4fc ;
-	--ion-color-dental-four: #17f9ff;
-	--ion-color-dental-five: #ffff;
-
+  --ion-color-newbase: #0378AE;
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: rgb(92, 103, 204);
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -69,7 +62,7 @@
   --ion-color-dark-tint: #383a3e;
 
   /** medium **/
-  --ion-color-medium: #92949c;
+  --ion-color-medium: #0378AE;
   --ion-color-medium-rgb: 146, 148, 156;
   --ion-color-medium-contrast: #ffffff;
   --ion-color-medium-contrast-rgb: 255, 255, 255;
@@ -77,7 +70,7 @@
   --ion-color-medium-tint: #9d9fa6;
 
   /** light **/
-  --ion-color-light: #f4f5f8;
+  --ion-color-light: e0dfe6;
   --ion-color-light-rgb: 244, 245, 248;
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
@@ -85,21 +78,13 @@
   --ion-color-light-tint: #f5f6f9;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   /*
    * Dark Colors
    * -------------------------------------------
    */
 
   body {
-
-    --ion-color-dental: #001449;
-    --ion-color-dental-one: #012677;
-    --ion-color-dental-two: #005bc5;
-    --ion-color-dental-three: #00b4fc ;
-    --ion-color-dental-four: #17f9ff;
-    --ion-color-dental-five: #ffff;
-
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;

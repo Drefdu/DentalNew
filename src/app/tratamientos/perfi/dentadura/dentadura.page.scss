@@ -1,42 +1,26 @@
-#container-main{
-    width: 90%;
-    background-color: rgba($color: #ffffff, $alpha: 0.9);
-    
+#function-container{
+  position: relative;
+  height: auto;
+  width: 850px;
+  top: 30%;
+  border-radius: 50px 50px 0px 0px;
+  background-color: #e0dfe6;
 }
-#container-fondo{
-    background-image: url(../../../../assets/Fondo-dientes.jpg);
-    background-size: 40%;
+.title{
+  padding-top: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 0%;
+  color: black;
 }
-
-///mio
-
-ion-col {
-  //background-color: #b1b1b1;
-  //border: solid 1px #a53939;
-  color: #25aadf;
-  //height: 5%;
-  //text-align: center;
-  //width: 30%;
+#leyenda-green{
+  width: 10%;
+  height: 10%;
+  border-color: azure;
 }
-.cardD{
-background-color: #007bff;
-position: relative;
-border-radius: 10px;
-//height: auto;
-}
-.dos{
-  flex-basis: 35%;
-}
-
-.tres{
-  flex-basis: 65%;
-}
-
-.cuatro{
-  flex-basis: 40%;
-  color: #ffffff;
-}
-
-.cinco{
-  flex-basis: 60%;
+@media only screen and (max-width: 600px) {
+  #function-container{
+      width: 100%;
+      top: 5%;
+  }
 }

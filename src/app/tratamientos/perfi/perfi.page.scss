@@ -1,191 +1,72 @@
-.custom-icon {
-  font-size: 35px;
-  //margin-top: 100px;
+.user-card{
+  background-color: #e0dfe6;;
+  width: 95%;
+  max-width: 750px;
+  min-height: 160px;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-
-label {
-  padding-right: 10px;
-  //border-left: 10px;
-  font-size: 1rem;
+.user-photo{
+  padding: 0%;
+  margin: 0%;
+  width: calc(100% /4);
+  background-color: #8c8c8c;;
 }
-
-.contentU{
-//background-color: #1a4441c0;
-width: 80%;
-//position: a;
-//border: 1px solid #ccc;
-background-color: #cdd5dde0;
-padding: 10px;
-border-radius: 10px;
-//margin: 20px;
-left: 9%;
-height: auto;
+.text-secundus{
+  font-size: 22px;
+  color: black;
+  font-weight: 700;
 }
-
-ion-col {
-//background-color: #b1b1b1;
-//border: solid 1px #a53939;
-color: #000000;
-//height: 5%;
-//text-align: center;
+.text-primarius {
+  font-size: 24px;
+  color: black;
+  font-weight: 900;
 }
-
-.prueba{
-//color: aqua;
-//left: 5%;
-margin: 2%;
-position: relative;
-}
-
-.pantallas{
-  background-color: #c5c4c4;
-width: 100%;
-color: #000000;
-}
-
-.container {
-position: relative;
-width: 80%;
-height: 70%;
-left: 10%;
-color: #000000;
-border: 1px solid #ccc;
-background-color: #ffffff;
-padding: 10px;
-border-radius: 10px;
-top: 10px;
-
-//margin: 20%;
-}
-
-.buttonMore {
-background-color: #007bff;
-color: #fff;
-position: relative;
-border: none;
-padding: 10px;
-font-size: 24px;
-border-radius: 50%;
-//left: 80%;
-//bottom: 5%;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-cursor: pointer;
-}
-
-
-.date {
-font-size: 18px;
-margin-bottom: 10px;
-}
-
-.image {
-display: inline-block;
-width: 170px;
-height: 170px;
-padding: 0%;
-}
-
-// .add-button {
-//   position: absolute;
-//   bottom: 10px;
-//   right: 10px;
-//   padding: 10px;
-//   background-color: #000000;
-//   color: #fff;
-//   border: none;
-//   cursor: pointer;
-// }
-
-.info-label {
-font-size: 18px;
-margin-bottom: 10px;
-
-}
-
-// .button-container {
-//   display: flex;
-//   justify-content: flex-end;
-//   margin-top: 20px;
-// }
-
-// .button {
-//   margin-left: 10px;
-//   padding: 10px;
-//   background-color: #0d3e72;
-//   color: #ffffff;
-//   font-size: 15px;
-//   border: none;
-//   cursor: pointer;
-//   border-radius: 50%;
-// }
-.cardD{
-background-color: #007bff;
-position: relative;
-border-radius: 10px;
-//height: auto;
-}
-
-.inputD{
-background-color: #ffffff;
-//position: absolute;
-}
-
-.calendar-row {
-display: flex;
-width: 100%;
-//position: fixed;
-align-content: center;
-}
-
-.calendario {
-flex-grow: 1;
-width: 100%;
-}
-
-.cajap{
-align-items: center;
-font-size: 130%;
-//background-color: #a2f1e7;
-//height: 10%;
-//position: relative;
-}
-
-.btnrow{
-left: 10%;
-}
-
-.inp{
-background-color: #e9e9e9;
-border-radius: 20px;
-}
-
-.header {
-  background-size: cover 150%;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: auto;
-  background-color: rgb(101, 116, 255);
-  border-radius: 0 0 50px 50px;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  padding: 5%;
-  width: 90%;
-}
-
-
-
-#container-info{
-  width: 90%;
-  height: auto;
+#function-container{
+  width: 850px;
+  margin-top: 10%;
   border-radius: 50px 50px 0px 0px;
+  background-color: #e0dfe6;
+}
+.icon{
+  background-color: rgb(92, 103, 204);
+  color: #e0dfe6;
+  border-radius: 10px;
+  padding: 2%;
+}
+.photos{
+  width: 100%;
+  max-width: 150px;
+}
+ion-label{
+  color: #222222;
+}
+ion-item{
+  background-color: #e0dfe6;
+}
+@media only screen and (max-width: 600px) {
+  .text-secundus{
+      font-size: 14px;
+  }
+  .text-primarius {
+      font-size: 16px;
+      color: black;
+      font-weight: 900;
+  }
+  #function-container{
+      padding: 0;
+      width: 100%;
+      
+  }
 }
 
-.fondo{
-  background-color: #c5c4c4;
+@media only screen and (max-width: 300px) {
+  .text-secundus{
+      font-size: 12px;
+  }
+  .text-primarius {
+      font-size: 14px;
+      color: black;
+      font-weight: 900;
+  }
 }
-ion-img{
-  width: 150px;
-}
-
-    
