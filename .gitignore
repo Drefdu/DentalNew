@@ -18,10 +18,10 @@ log.txt
 /coverage
 
 # Ionic
-/.ionic
-/www
-/platforms
-/plugins
+#/.ionic
+#/www
+#/platforms
+#/plugins
 
 # Compiled output
 /dist
@@ -68,6 +68,6 @@ testem.log
 Thumbs.db
 
 # Firebase
-.firebase
-*-debug.log
-.runtimeconfig.json
+#.firebase
+#*-debug.log
+#.runtimeconfig.json
