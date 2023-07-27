@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { GuardGuard } from './guards/guard.guard';
 
 const routes: Routes = [
   {
     path: 'home',
+    canActivate: [GuardGuard],
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
@@ -17,6 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'tratamientos',
+    canActivate: [GuardGuard],
     children: [
       {
         path: "",
@@ -30,10 +33,12 @@ const routes: Routes = [
   },
   {
     path: 'calendar',
+    canActivate: [GuardGuard],
     loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
   },
   {
     path: 'loading',
+    canActivate: [GuardGuard],
     loadChildren: () => import('./loading/loading.module').then( m => m.LoadingPageModule)
   },
 ];

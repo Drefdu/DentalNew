@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { environment } from 'src/environments/environment';
+import { SessionService } from '../services/session.service';
+import { DatabaseService } from '../services/database.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,31 +13,21 @@ import { environment } from 'src/environments/environment';
 })
 export class SignInPage implements OnInit {
   
-  user:any = {};
-  constructor(private router: Router) { }
+  constructor(private router: Router, private session: SessionService, private database: DatabaseService) { }
 
   ngOnInit() {
+    this.getUsers();
   }
+
   login() {
-    const app = initializeApp(environment.firebaseConfig)
-    const auth = getAuth();
-    const provider = new GoogleAuthProvider();
-    
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential?.accessToken;
-        const user = result.user;
-        const uid = user.uid;
-        console.log(user);
-        window.location.href = '/home' + '?w1=' + uid;
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.customData.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
-      });
+   this.session.login(); 
+  }
+
+  getUsers(){
+    this.database.getUsers().subscribe(data =>{
+      console.log(data);
+    }, error => {
+      console.log(error);
+    })
   }
 }
