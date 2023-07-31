@@ -11,9 +11,6 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { DatabaseService } from './database.service';
 
-
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -31,15 +28,17 @@ export class SessionService {
       const token = credential?.accessToken;
       const user = result.user;
       const uid = user.uid;
-  
-      this.database.addUser(user).subscribe(data => {
-      console.log("usuario registrado exitosamente");
-      window.location.href = '/home' + '?w1=' + uid;
-     },error => {
-        console.log(error);
-     });
-      
-    } catch (error:any) {
+
+      this.database.addUser(user).subscribe(
+        (data) => {
+          console.log('usuario registrado exitosamente');
+          window.location.href = '/home' + '?w1=' + uid;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    } catch (error: any) {
       const errorCode = error.code;
       const errorMessage = error.message;
       const email = error.customData.email;
@@ -47,9 +46,6 @@ export class SessionService {
       console.log(errorMessage);
     }
   }
-  
-
-
 
   async isLogged(): Promise<boolean> {
     return new Promise((resolve, reject) => {

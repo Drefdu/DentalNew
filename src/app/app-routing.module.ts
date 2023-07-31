@@ -41,6 +41,21 @@ const routes: Routes = [
     canActivate: [GuardGuard],
     loadChildren: () => import('./loading/loading.module').then( m => m.LoadingPageModule)
   },
+  {
+    path: 'ficha-user',
+    children: [
+      {
+        path: "",
+        loadChildren: () => import('./ficha-user/ficha-user.module').then( m => m.FichaUserPageModule)
+      },
+      {
+        path: "add-user",
+        loadChildren: () => import('./ficha-user/add-user/add-user.module').then( m => m.AddUserPageModule)
+      },
+
+    ]
+
+  },
 ];
 
 @NgModule({
