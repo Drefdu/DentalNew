@@ -49,7 +49,35 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
-    <ion-list> </ion-list>
+  <ion-content color="primary">
+    <div class="d-flex justify-content-center h-100 w-100">
+      <div class="h-100" id="main-container">
+        <div class="h-100" id="container-blanco">
+          <div class="d-flex justify-content-center">
+            <ion-list class="mt-5 w-100" id="list">
+              <ion-item *ngFor="let result of results" [routerLink]="[result._id]" id="item">
+                <ion-label id="label">
+                  <div class="row">
+                    <div class="col-12">
+                      <p class="fs-6 fw-bold" style="margin-bottom: 2%">
+                        {{result.Nombre}}
+                      </p>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-sm-2 col-lg-1">
+                        <p>Edad: {{result.Edad}}</p>
+                      </div>
+                      <div class="col-6 col-sm-2 col-lg-1">
+                        <p>Sexo: {{result.Sexo}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </div>

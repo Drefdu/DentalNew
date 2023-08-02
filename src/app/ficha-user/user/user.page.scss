@@ -72,8 +72,8 @@ h3 {
   margin: 8px;
 }
 p {
-  font-size: 13px;
-  color: #222222a9;
+  font-size: 10px;
+  color: #222222;
 }
 
 .header {
@@ -106,9 +106,7 @@ ion-content {
 
 input,
 label,
-textarea,
-ion-radio,
-ion-datetime {
+textarea {
   font-size: 13px;
 }
 
@@ -116,8 +114,10 @@ label {
   color: #686868;
 }
 
-ion-radio {
-  color: #686868ab;
+.editar {
+  font-size: 25px;
+  margin: 20px;
+  color: white;
 }
 
 .contB {

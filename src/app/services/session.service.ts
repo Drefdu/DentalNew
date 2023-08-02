@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { DatabaseService } from './database.service';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -29,15 +30,30 @@ export class SessionService {
       const user = result.user;
       const uid = user.uid;
 
-      this.database.addUser(user).subscribe(
+      this.database.getUser(uid).subscribe(
         (data) => {
-          console.log('usuario registrado exitosamente');
-          window.location.href = '/home' + '?w1=' + uid;
+          if(data.msg){
+            console.log("El usuario no existe");
+            this.database.addUser(user).subscribe(
+              (data) => {
+                console.log('usuario registrado exitosamente');
+                window.location.href = '/home' + '?w1=' + uid;
+              },
+              (error) => {
+                console.log(error);
+              }
+            );
+          }else{
+            console.log("El usuario existe");
+            window.location.href = '/home' + '?w1=' + uid;
+          }
         },
         (error) => {
           console.log(error);
         }
       );
+
+      
     } catch (error: any) {
       const errorCode = error.code;
       const errorMessage = error.message;

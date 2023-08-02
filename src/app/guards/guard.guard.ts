@@ -26,7 +26,7 @@ export class GuardGuard implements CanActivate {
       return true;
     } else {
       console.log('no estás logueado');
-      this.router.navigate(['/']);
+      this.router.navigate(['/sign-in']);
       return false;
     }
   }

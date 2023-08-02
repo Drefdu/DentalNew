@@ -1,0 +1,63 @@
+#container-main{
+    //background-color: aqua;
+    background-image: url("../../assets/Fondo-dientes.jpg");
+    background-size: 40%;
+    
+    
+  }
+  #container-secondary{
+    //background-color: rgba($color: #4f5353, $alpha: 0.7);
+    width: 100%;
+    // border: none;
+    // border-color: none;
+    // border-style: none;
+    //color: var(--ion-color-primary);
+    //margin-top: 0px;
+    height: 100%;
+  }
+
+  .circle {
+    width: 250px;
+    height: 250px;
+    margin-top: 0px;
+    padding: 30px;
+    border-radius: 110px;
+    overflow: hidden;
+    background-color: #ffffff; /* color de fondo del círculo  */
+  }
+  
+  .circle img {
+    object-fit: cover;
+  }
+
+  .custom-container ion-input {
+    max-width: 300px; 
+    margin: 0 auto;
+    padding: auto;
+    text-align: left;
+    --background-color: #ffffff;
+    font-size: 13px;
+
+    
+  }
+
+  .inputs{
+    margin-top: -100px;
+
+  }
+  
+  *{
+    box-shadow: none;
+  }
+
+ 
+
+  a{
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 200;
+  }
+
+  input{
+    text-align: left;
+  }

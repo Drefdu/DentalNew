@@ -9,32 +9,54 @@
     >
     <div class="d-flex justify-content-center mt-5">
       <div class="circle">
-        <img src="../../assets/diente.png" alt="hola">
+        <img src="../../assets/icon.png" alt="icon">
       </div>
     </div>
     
+   
       <div class="mb-5 mt-5 text-center">
+        <img src="assets/title.png" alt="logo" style="width: 350px;">
         <ion-text >
-          <p class="fs-4 fw-bolder">REGISTRA Y AGENDA TU CITA YA!</p>
+          <p style="color: rgba(15, 32, 51, 0.856); font-weight: 400; font-size: 100%;"
+          >¡REGISTRA Y AGENDA TU CITA YA!</p>
         </ion-text>
       </div>
-      <div class="mb-5 mt-5 text-center custom-container">
-        <ion-input label="Correo Electronico" label-placement="floating" fill="solid" placeholder="User@Example.com"></ion-input>
+
+      <div style="background-color: rgb(255, 255, 255); padding: 0.5%; display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 400px; border-radius: 50px;">
+
+
+      <div class="mb-5 mt-5 custom-container" style="color: gray;">
+
+        
+        <ion-input label="Correo electr&oacute;nico" label-placement="floating" placeholder="usuario@correo.com"></ion-input>
         <br>
-        <ion-input label="Password" type="password" label-placement="floating" fill="solid" placeholder="*****"></ion-input>
+        <ion-input label="Contrase&ntilde;a" type="password" label-placement="floating" placeholder="*****"></ion-input>
+        <br><br><ion-button type="submit" expand="full" shape="round" style="margin-left: 10%; margin-right: 10%;">Acceder</ion-button>
+
+
+
         <div class="d-flex justify-content-center align-items-center mt-5 p-5">
-          <div class="inputs">
-            <ion-text>
+          
+          <div class="inputs"> <br>
+            <ion-text> 
               <div class="d-flex justify-content-between mt-4">
-                <ion-button expand="block" color="danger" (click)="login()" shape="round">
+                <ion-button expand="block" color="danger" (click)="login()" shape="circle" style=" --border-radius: 50%;
+                width: 60px;
+                height: 60px;">
                   <ion-icon name="logo-google"></ion-icon>
                 </ion-button>
-                <ion-button shape="round">
+                <ion-button shape="circle" style=" --border-radius: 50%;
+                width: 60px;
+                height: 60px;">
                   <ion-icon name="logo-facebook"></ion-icon>
                 </ion-button>
               </div>
-              <div class="mt-5">
-                <a href="">Olvidaste tu contraseña?</a>
+              <div class="mt-5" style="color: rgba(112, 122, 148, 0.616);">
+                <a href="">Olvid&eacute; la contraseña </a> |
+                <a href="/register"> Crea una cuenta</a>
               </div>
             </ion-text>          
           </div>
@@ -43,20 +65,9 @@
 
       
 
-      <!-- <div class="d-flex justify-content-center align-items-center mt-5 p-5">
-        <div class="">
-          <ion-text>
-            <div class="d-flex justify-content-between">
-              <ion-button expand="block" color="danger" (click)="goToHome()" shape="round">
-                <ion-icon name="logo-google"></ion-icon>
-              </ion-button>
-              <ion-button shape="round">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </ion-button>
-            </div>
-          </ion-text>          
-        </div>
-      </div> -->
+     
     </div>
   </div>
+
+</div>
 </ion-content>

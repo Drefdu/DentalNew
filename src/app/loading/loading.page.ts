@@ -7,11 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./loading.page.scss'],
 })
 export class LoadingPage implements OnInit {
-  
-  constructor() { }
+  constructor(private router: Router) {}
   ngOnInit() {
+    this.setTime();
   }
 
-  
-
+  setTime = () => {
+    setTimeout(() => {
+      this.router.navigate(['/sign-in']);
+    }, 3000);
+  };
 }

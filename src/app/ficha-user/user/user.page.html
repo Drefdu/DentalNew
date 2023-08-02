@@ -2,9 +2,7 @@
   <ion-header>
     <ion-toolbar color="primary">
       <ion-buttons slot="start">
-        <ion-back-button
-          defaultHref="tratamientos/{{userId}}"
-        ></ion-back-button>
+        <ion-back-button defaultHref="ficha-user"></ion-back-button>
       </ion-buttons>
       <button slot="end" class="contB">
         <ion-icon class="editar" name="pencil-outline"></ion-icon>
@@ -12,15 +10,13 @@
     </ion-toolbar>
   </ion-header>
 
-
-  <ion-content >
-
+  <ion-content>
     <div class="header"></div>
 
     <div class="wrapper">
-
       <div class="patient-info">
-        <h1>Datos clínicos del paciente</h1><br>
+        <h1>Datos clínicos del paciente</h1>
+        <br />
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -30,8 +26,9 @@
                 id="nombre"
                 class="form-control"
                 readonly
-                value="Juan"
-              /> <br>
+                [value]="datosFicha.Nombre"
+              />
+              <br />
             </div>
             <div class="form-group">
               <label for="apellido">Apellido:</label>
@@ -40,19 +37,21 @@
                 id="apellido"
                 class="form-control"
                 readonly
-                value="Pérez"
+                [value]="datosFicha.Apellidos"
               />
-            </div> <br>
+            </div>
+            <br />
             <div class="form-group">
-              <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+              <label for="Edad">Edad:</label>
               <input
                 type="text"
-                id="fecha-nacimiento"
+                id="edad"
                 class="form-control"
                 readonly
-                value="10/05/1985"
+                [value]="datosFicha.Edad"
               />
-            </div> <br>
+            </div>
+            <br />
             <div class="form-group">
               <label for="telefono">Teléfono:</label>
               <input
@@ -60,8 +59,9 @@
                 id="telefono"
                 class="form-control"
                 readonly
-                value="555-1234"
-              /> <br>
+                [value]="datosFicha.Telefono"
+              />
+              <br />
             </div>
           </div>
           <div class="col-md-6">
@@ -73,7 +73,8 @@
                 class="form-control"
                 readonly
                 value="70 kg"
-              /> <br>
+              />
+              <br />
             </div>
             <div class="form-group">
               <label for="altura">Altura:</label>
@@ -83,7 +84,8 @@
                 class="form-control"
                 readonly
                 value="170 cm"
-              /> <br>
+              />
+              <br />
             </div>
             <div class="form-group">
               <label for="correo">Correo electrónico:</label>
@@ -93,7 +95,8 @@
                 class="form-control"
                 readonly
                 value="juan@example.com"
-              /> <br>
+              />
+              <br />
             </div>
             <div class="form-group">
               <label for="direccion">Dirección:</label>
@@ -102,8 +105,10 @@
               >
             </div>
           </div>
-        </div> <br><br>
-        <h3>Registro de datos dentales</h3><br>
+        </div>
+        <br /><br />
+        <h3>Registro de datos dentales</h3>
+        <br />
         <table class="table table-striped">
           <thead>
             <tr>

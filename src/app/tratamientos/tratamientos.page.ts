@@ -16,7 +16,7 @@ export class TratamientosPage implements OnInit {
       this.users = data;
       this.results = [...this.users];
       console.log(data)
-    })
+    })  
   }
   ionViewWillEnter(){
     this.datosService.getUsers().subscribe(data =>{

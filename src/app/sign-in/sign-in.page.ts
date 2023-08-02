@@ -14,6 +14,7 @@ export class SignInPage implements OnInit {
 
   ngOnInit() {
     this.getUsers();
+
   }
 
   login() {

@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'sign-in',
+    redirectTo: 'loading',
     pathMatch: 'full'
   },
   {
@@ -38,7 +38,6 @@ const routes: Routes = [
   },
   {
     path: 'loading',
-    canActivate: [GuardGuard],
     loadChildren: () => import('./loading/loading.module').then( m => m.LoadingPageModule)
   },
   {
@@ -52,10 +51,23 @@ const routes: Routes = [
         path: "add-user",
         loadChildren: () => import('./ficha-user/add-user/add-user.module').then( m => m.AddUserPageModule)
       },
+      {
+        path: ":_id",
+        loadChildren: () => import('./ficha-user/user/user.module').then(m => m.UserPageModule)
+      },
 
     ]
 
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'solicitud',
+    loadChildren: () => import('./solicitud/solicitud.module').then( m => m.SolicitudPageModule)
+  }
+
 ];
 
 @NgModule({

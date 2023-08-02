@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { initializeApp } from 'firebase/app';
-import { GoogleAuthProvider, getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, getAuth, onAuthStateChanged } from 'firebase/auth';
 import { environment } from 'src/environments/environment';
 import { SessionService } from '../services/session.service';
 
@@ -22,8 +22,6 @@ export class HomePage {
       onAuthStateChanged(this.auth, (user) => {
         if (user) {
           this.user = user;
-        } else {
-          this.router.navigate(['/sign-in']);
         }
       });
   }
