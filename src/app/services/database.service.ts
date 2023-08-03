@@ -29,12 +29,16 @@ export class DatabaseService {
     return this.http.post(this.ficha, ficha);
   }
 
-  getFichas():Observable<any>{
-    return this.http.get(this.ficha);
+  getFichas(uid:String):Observable<any>{
+    return this.http.get(this.ficha + "/" + uid);
   }
 
   getFicha(_id:String):Observable<any>{
-    return this.http.get(this.ficha + "/" + _id);
+    return this.http.get(this.ficha + "/ficha/" + _id);
+  }
+
+  updateFicha(ficha: {}, _id:String):Observable<any>{
+    return this.http.put(this.ficha + "/" + _id, ficha);
   }
   
 }

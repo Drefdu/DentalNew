@@ -4,8 +4,8 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="ficha-user"></ion-back-button>
       </ion-buttons>
-      <button slot="end" class="contB">
-        <ion-icon class="editar" name="pencil-outline"></ion-icon>
+      <button slot="end" class="contB" [routerLink]="['../update-user', datosFicha._id]">
+        <ion-icon class="editar" name="pencil-outline" ></ion-icon>
       </button>
     </ion-toolbar>
   </ion-header>
