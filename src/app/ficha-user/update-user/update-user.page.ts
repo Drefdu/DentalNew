@@ -27,13 +27,24 @@ export class UpdateUserPage implements OnInit {
     });
   }
 
-  updateFicha(Nombre:any, Apellidos:any, Sexo:any, Telefono:any, Edad:any){
+  updateFicha(Nombre:any, Apellidos:any, Sexo:any, Telefono:any, Edad:any,Altura:any,AntecedentesHereditarios:any,ETS:any,ED:any,EC:any,OP:any,auxHigiene:any,LimpDientes:any,adicciones:any,alergias:any){
     this.ficha = {
       Nombre:Nombre.value || this.datosFicha.Nombre,
       Apellidos: Apellidos.value || this.datosFicha.Apellidos,
       Sexo: Sexo.value || this.datosFicha.Sexo,
       Telefono: Telefono.value || this.datosFicha.Telefono,
-      Edad: Edad.value || this.datosFicha.Eddad
+      Edad: Edad.value || this.datosFicha.Edad,
+      Altura:Altura.value || this.datosFicha.Altura,
+      AntecedentesHereditarios:AntecedentesHereditarios.value|| this.datosFicha.AntecedentesHereditarios,
+      ETS:ETS.value || this.datosFicha.ETS,
+      ED:ED.value || this.datosFicha.ED,
+      EC:EC.value || this.datosFicha.EC,
+      OP:OP.value || this.datosFicha.OP,
+      auxHigiene:auxHigiene.value || this.datosFicha.auxHigiene,
+      LimpDientes:LimpDientes.value|| this.datosFicha.LimpDientes,
+      adicciones:adicciones.value || this.datosFicha.adicciones,
+      alergias:alergias.value|| this.datosFicha.alergias
+
     }
     console.log(this.ficha);
     this.database.updateFicha(this.ficha, this._id).subscribe((data)=> {

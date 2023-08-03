@@ -177,94 +177,32 @@
             height: 100%;
           "
         >
-          <ion-radio-group value="auxiliares" #auxHigiene>
-            <ion-col>
-              <label>¿Usa auxiliares de higiene bucal?:</label>
-            </ion-col>
-            <ion-col><ion-radio value="si">Si</ion-radio></ion-col>
-            <ion-col> <ion-radio value="no">No</ion-radio></ion-col>
-          </ion-radio-group>
+        <ion-radio-group value="ninguno" #auxHigiene>
           <ion-col>
-            <input
-              type="text"
-              id="aux"
-              class="form-control"
-              placeholder="¿Cu&aacute;les?"
-              #auxHigiene
-            />
+            <label>¿Usa auxiliares de higiene bucal?:</label>
           </ion-col>
+          <ion-col><ion-radio value="Hilo dental">Hilo dental</ion-radio></ion-col>
+          <ion-col> <ion-radio value="Enguaje">Enguaje</ion-radio></ion-col>
+        </ion-radio-group>
         </ion-row>
       </div>
       <br />
 
       <div class="form-group">
-        <ion-row>
-          <ion-radio-group value="comidas" #dulces>
-            <ion-col>
-              <label
-                >¿Consume golosinas u otro tipo de alimentos entre las
-                comidas?:</label
-              >
-            </ion-col>
-            <ion-col><ion-radio value="si">Si</ion-radio></ion-col>
-
-            <ion-col> <ion-radio value="no">No</ion-radio></ion-col>
-          </ion-radio-group>
-        </ion-row>
+        <label>Adicciones:</label>
+        <input type="text" id="adicciones" class="form-control" #adicciones/>
       </div>
       <br />
 
       <div class="form-group">
-        <ion-row>
-          <ion-radio-group value="adicciones" #adicciones>
-            <ion-col>
-              <label>Adicciones:</label>
-            </ion-col>
-            <ion-col><ion-radio value="tabaco">Tabaco</ion-radio></ion-col>
-
-            <ion-col> <ion-radio value="alcohol">Alcohol</ion-radio></ion-col>
-
-            <ion-col> <ion-radio value="otro">Otro</ion-radio></ion-col>
-          </ion-radio-group>
-        </ion-row>
-        <br />
-        <input
-          type="text"
-          id="otroadicc"
-          class="form-control"
-          placeholder="En caso de se otro, especifique"
-          #adicciones
-        />
+        <label>¿Antecedentes al&eacute;rgicos?:</label>
+        <input type="text" id="otroalerg" class="form-control" #alergias/>
       </div>
       <br />
-
-      <div class="form-group">
-        <ion-row>
-          <ion-radio-group value="alergia" #alergias>
-            <ion-col>
-              <label>¿Antecedentes al&eacute;rgicos?:</label>
-            </ion-col>
-            <ion-col><ion-radio value="si">Si</ion-radio></ion-col>
-
-            <ion-col> <ion-radio value="no">No</ion-radio></ion-col>
-          </ion-radio-group>
-        </ion-row>
-        <br />
-        <input
-          type="text"
-          id="otroalerg"
-          class="form-control"
-          placeholder="En caso de ser cierto, especifique su caso"
-          #alergias
-        />
-      </div>
-      <br />
-
-      
 
       <br /><br /><br />
       <ion-button expand="full" shape="round" (click)="addFicha(Nombre, Apellidos, Sexo, Telefono, Edad, Altura,AntecedentesHereditarios,
-      ETS,ED,EC,OP,auxHigiene,LimpDientes,dulces,adicciones,alergias)"
+      ETS,ED,EC,OP,auxHigiene,LimpDientes,adicciones,alergias)"
         >Enviar respuestas</ion-button
       >
     </div>
