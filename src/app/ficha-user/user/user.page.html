@@ -17,95 +17,192 @@
       <div class="patient-info">
         <h1>Datos clínicos del paciente</h1>
         <br />
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="nombre">Nombre:</label>
-              <input
-                type="text"
-                id="nombre"
-                class="form-control"
-                readonly
-                [value]="datosFicha.Nombre"
-              />
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.Nombre"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input
+                  type="text"
+                  id="apellido"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.Apellidos"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="Edad">Edad:</label>
+                <input
+                  type="text"
+                  id="edad"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.Edad"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input
+                  type="text"
+                  id="telefono"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.Telefono"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="telefono">Otros padecimientos:</label>
+                <input
+                  type="text"
+                  id="telefono"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.OP"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="telefono">auxiliares de higiene bucal:</label>
+                <input
+                  type="text"
+                  id="telefono"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.auxHigiene"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="telefono">frecuencia se lava los dientes:</label>
+                <input
+                  type="text"
+                  id="telefono"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.LimpDientes"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="telefono">¿Consume golosinas u otro tipo de alimentos entre las
+                  comidas?:</label>
+                <input
+                  type="text"
+                  id="telefono"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.dulces"
+                />
+              </div>
               <br />
             </div>
-            <div class="form-group">
-              <label for="apellido">Apellido:</label>
-              <input
-                type="text"
-                id="apellido"
-                class="form-control"
-                readonly
-                [value]="datosFicha.Apellidos"
-              />
-            </div>
-            <br />
-            <div class="form-group">
-              <label for="Edad">Edad:</label>
-              <input
-                type="text"
-                id="edad"
-                class="form-control"
-                readonly
-                [value]="datosFicha.Edad"
-              />
-            </div>
-            <br />
-            <div class="form-group">
-              <label for="telefono">Teléfono:</label>
-              <input
-                type="text"
-                id="telefono"
-                class="form-control"
-                readonly
-                [value]="datosFicha.Telefono"
-              />
+        
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="altura">Altura:</label>
+                <input
+                  type="text"
+                  id="altura"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.Altura"
+                />
+              </div>
               <br />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="peso">Peso:</label>
-              <input
-                type="text"
-                id="peso"
-                class="form-control"
-                readonly
-                value="70 kg"
-              />
+              <div class="form-group">
+                <label for="Motivo">Sexo:</label>
+                <input
+                  type="text"
+                  id="Motivo"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.Sexo"
+                />
+              </div>
               <br />
-            </div>
-            <div class="form-group">
-              <label for="altura">Altura:</label>
-              <input
-                type="text"
-                id="altura"
-                class="form-control"
-                readonly
-                value="170 cm"
-              />
+              <div class="form-group">
+                <label for="Motivo">Antecedentes Hereditarios:</label>
+                <input
+                  type="text"
+                  id="Motivo"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.AntecedentesHereditarios"
+                />
+              </div>
               <br />
-            </div>
-            <div class="form-group">
-              <label for="correo">Correo electrónico:</label>
-              <input
-                type="email"
-                id="correo"
-                class="form-control"
-                readonly
-                value="juan@example.com"
-              />
+              <div class="form-group">
+                <label for="Motivo">Enfermedades de trasmisió&oacute;n sexual:</label>
+                <input
+                  type="text"
+                  id="Motivo"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.ETS"
+                />
+              </div>
               <br />
-            </div>
-            <div class="form-group">
-              <label for="direccion">Dirección:</label>
-              <textarea id="direccion" class="form-control" readonly>
-123 Calle Principal, Ciudad</textarea
-              >
+              <div class="form-group">
+                <label for="Motivo">Enfermedades degenerativas:</label>
+                <input
+                  type="text"
+                  id="Motivo"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.ED"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="Motivo">Enfermedades cong&eacute;nitas:</label>
+                <input
+                  type="text"
+                  id="Motivo"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.EC"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="Motivo">Adicciones:</label>
+                <input
+                  type="text"
+                  id="Motivo"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.adicciones"
+                />
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="Motivo">Alergias:</label>
+                <input
+                  type="text"
+                  id="Motivo"
+                  class="form-control"
+                  readonly
+                  [value]="datosFicha.alergias"
+                />
+              </div>
             </div>
           </div>
         </div>
+        
         <br /><br />
         <h3>Registro de datos dentales</h3>
         <br />
