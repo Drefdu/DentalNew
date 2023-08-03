@@ -29,7 +29,7 @@ export class AddUserPage implements OnInit {
     });
   }
   
-  addFicha(Nombre:any, Apellidos:any, Sexo:any, Telefono:any, Edad:any,Altura:any,AntecedentesHereditarios:any,ETS:any,ED:any,EC:any,OP:any,auxHigiene:any,LimpDientes:any,dulces:any,adicciones:any,alergias:any){
+  addFicha(Nombre:any, Apellidos:any, Sexo:any, Telefono:any, Edad:any,Altura:any,AntecedentesHereditarios:any,ETS:any,ED:any,EC:any,OP:any,auxHigiene:any,LimpDientes:any,adicciones:any,alergias:any){
     console.log("ola");
     console.log(this.user.uid);
     console.log(Nombre.value);
@@ -48,7 +48,6 @@ export class AddUserPage implements OnInit {
       OP:OP.value,
       auxHigiene:auxHigiene.value,
       LimpDientes:LimpDientes.value,
-      dulces:dulces.value,
       adicciones:adicciones.value,
       alergias:alergias.value
     }
