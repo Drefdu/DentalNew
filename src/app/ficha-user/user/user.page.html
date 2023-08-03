@@ -7,10 +7,10 @@
       <button slot="end" class="contB" [routerLink]="['../update-user', datosFicha._id]">
         <ion-icon class="editar" name="pencil-outline" ></ion-icon>
       </button>
-      <ion-buttons>
-        <button slot="end" class="contB">
+      <ion-buttons slot="end">
+        <ion-button class="contB" (click)="deleteUser()">
           <ion-icon name="trash-outline"></ion-icon>
-        </button>
+        </ion-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>

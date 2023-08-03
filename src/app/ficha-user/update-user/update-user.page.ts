@@ -37,7 +37,7 @@ export class UpdateUserPage implements OnInit {
     }
     console.log(this.ficha);
     this.database.updateFicha(this.ficha, this._id).subscribe((data)=> {
-      this.router.navigate(["ficha-user"]);
+      this.router.navigate(['/ficha-user']);
     }, (error) => {
       console.log(error);
     })

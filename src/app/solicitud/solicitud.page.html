@@ -61,125 +61,7 @@
 
         <div class="row">
           <div class="col-md-6">
-            <div class="form-group">
-              <label for="nombre">Nombre del paciente:</label>
-              <ion-row>
-                <ion-col>
-                  <input
-                    type="text"
-                    id="nombre"
-                    class="form-control"
-                    placeholder="Nombre(s)"
-                  />
-                </ion-col>
-                <ion-col>
-                  <input
-                    type="text"
-                    id="apellido"
-                    class="form-control"
-                    placeholder="Apellido(s)"
-                  />
-                </ion-col>
-              </ion-row>
-            </div>
-            <br />
 
-            <div class="form-group">
-              <label for="fecha-nacimiento">Fecha de nacimiento:</label>
-              <input type="date" id="fecha-nacimiento" class="form-control" />
-            </div>
-            <br />
-            <div class="form-group">
-              <ion-row>
-                <ion-col>
-                  <label for="edad">Edad:</label>
-                  <input type="text" id="edad" class="form-control" />
-                </ion-col>
-                <ion-col>
-                  <label for="altura">Altura:</label>
-                  <input type="text" id="altura" class="form-control" />
-                </ion-col>
-                <ion-col>
-                  <label for="peso">Peso:</label>
-                  <input type="text" id="peso" class="form-control" />
-                </ion-col> </ion-row
-              ><br />
-
-              <div class="form-group">
-                <ion-row
-                  style="
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    height: 100%;
-                  "
-                >
-                  <ion-col><label for="sexo">Sexo:</label></ion-col>
-                  <ion-radio-group value="frecuencia">
-                    <ion-col><ion-radio value="F">Femenino</ion-radio></ion-col>
-
-                    <ion-col>
-                      <ion-radio value="M">Masculino</ion-radio></ion-col
-                    >
-                  </ion-radio-group>
-                </ion-row>
-              </div>
-            </div>
-            <br />
-            <div class="form-group">
-              <label for="telefono">Tel&eacute;fono:</label>
-              <input type="text" id="telefono" class="form-control" /> <br />
-
-              <div class="form-group">
-                <ion-row>
-                  <ion-col>
-                    <label for="escolaridad">Escolaridad:</label>
-                    <input type="text" id="escolaridad" class="form-control" />
-                  </ion-col>
-                  <ion-col>
-                    <label for="ocupacion">Ocupaci&oacute;n:</label>
-                    <input type="text" id="ocupacion" class="form-control" />
-                  </ion-col>
-                </ion-row>
-              </div>
-              <br />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="estadocivil">Estado civil:</label>
-              <input type="text" id="estadocivil" class="form-control" />
-            </div>
-            <br />
-
-            <div class="form-group">
-              <label>Dirección:</label>
-              <ion-row>
-                <ion-col>
-                  <input
-                    type="text"
-                    id="calle"
-                    class="form-control"
-                    placeholder="Calle"
-                /></ion-col>
-                <ion-col>
-                  <input
-                    type="text"
-                    id="colonia"
-                    class="form-control"
-                    placeholder="Colonia"
-                /></ion-col>
-                <ion-col>
-                  <input
-                    type="text"
-                    id="numext"
-                    class="form-control"
-                    placeholder="N&uacute;mero exterior"
-                  />
-                </ion-col>
-              </ion-row>
-            </div>
-            <br />
 
             <div class="form-group">
               <label for="motivo">Motivo de la consulta:</label>
@@ -200,197 +82,25 @@
                 </ion-col>
                 <ion-col>
                   <label for="horacita">Hora:</label>
-                  <ion-datetime presentation="time"></ion-datetime>
+                  <input type="time" id="appt" class="input bg-light" name="appt" min="09:00" max="18:00"/>
                 </ion-col>
+ 
+
               </ion-row>
             </div>
           </div>
         </div>
 
         <br />
-        <h5>Antecedentes patol&oacute;gicos hereditarios</h5>
+        <h5>Para quien es la cita?</h5>
         <br />
-
-        <div class="form-group">
-          <label
-            >Padecimientos familiares en l&iacute;nea (Ejemplo: Diabetes,
-            hipertensi&oacute;n):</label
-          >
-          <input type="text" id="padecimientofam" class="form-control" />
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect01">Ficha</label>
+          <select class="form-select" id="inputGroupSelect01" *ngFor="let result of results">
+            <option [value]="result._id">{{result.Nombre}} {{result.Apellidos}}</option>
+          </select>
         </div>
-        <br />
-        <div class="form-group">
-          <h5>Antecedentes patol&oacute;gicos personales</h5>
-          <br />
-
-          <label>Enfermedades de trasmisió&oacute;n sexual:</label>
-          <input type="text" id="padecimientosex" class="form-control" />
-        </div>
-        <br />
-        <div class="form-group">
-          <label
-            >Enfermedades degenerativas (Ejemplo: Alzehaimer, Parkinson):</label
-          >
-          <input type="text" id="padecimientodeg" class="form-control" />
-        </div>
-        <br />
-        <div class="form-group">
-          <label
-            >Enfermedades cong&eacute;nitas (Ejemplo: Defectos del
-            coraz&oacute;n, S&iacute;ndrome de Down):</label
-          >
-          <input type="text" id="padecimientocon" class="form-control" />
-        </div>
-        <br />
-        <div class="form-group">
-          <label>Otros padecimientos (Especifique):</label>
-          <input type="text" id="padecimientootros" class="form-control" />
-        </div>
-        <br />
-
-        <h5>Antecedentes personales no patol&oacute;gicos</h5>
-        <div class="form-group">
-          <ion-row>
-            <ion-radio-group value="frecuencia">
-              <ion-col>
-                <label>¿Con qu&eacute; frecuencia se lava los dientes?:</label>
-              </ion-col>
-              <ion-col
-                ><ion-radio value="tres"
-                  >Tres veces al d&iacute;a</ion-radio
-                ></ion-col
-              >
-
-              <ion-col>
-                <ion-radio value="menosdetres"
-                  >Menos de tres veces al d&iacute;a</ion-radio
-                ></ion-col
-              >
-
-              <ion-col>
-                <ion-radio value="nodiario">No diariamente</ion-radio></ion-col
-              >
-            </ion-radio-group>
-          </ion-row>
-        </div>
-        <br />
-
-        <div class="form-group">
-          <ion-row
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              height: 100%;
-            "
-          >
-            <ion-radio-group value="auxiliares">
-              <ion-col>
-                <label>¿Usa auxiliares de higiene bucal?:</label>
-              </ion-col>
-              <ion-col><ion-radio value="si">Si</ion-radio></ion-col>
-
-              <ion-col> <ion-radio value="no">No</ion-radio></ion-col>
-            </ion-radio-group>
-            <ion-col>
-              <input
-                type="text"
-                id="aux"
-                class="form-control"
-                placeholder="¿Cu&aacute;les?"
-              />
-            </ion-col>
-          </ion-row>
-        </div>
-        <br />
-
-        <div class="form-group">
-          <ion-row>
-            <ion-radio-group value="comidas">
-              <ion-col>
-                <label
-                  >¿Consume golosinas u otro tipo de alimentos entre las
-                  comidas?:</label
-                >
-              </ion-col>
-              <ion-col><ion-radio value="si">Si</ion-radio></ion-col>
-
-              <ion-col> <ion-radio value="no">No</ion-radio></ion-col>
-            </ion-radio-group>
-          </ion-row>
-        </div>
-        <br />
-
-        <div class="form-group">
-          <ion-row>
-            <ion-radio-group value="adicciones">
-              <ion-col>
-                <label>Adicciones:</label>
-              </ion-col>
-              <ion-col><ion-radio value="tabaco">Tabaco</ion-radio></ion-col>
-
-              <ion-col> <ion-radio value="alcohol">Alcohol</ion-radio></ion-col>
-
-              <ion-col> <ion-radio value="otro">Otro</ion-radio></ion-col>
-            </ion-radio-group>
-          </ion-row>
-          <br />
-          <input
-            type="text"
-            id="otroadicc"
-            class="form-control"
-            placeholder="En caso de se otro, especifique"
-          />
-        </div>
-        <br />
-
-        <div class="form-group">
-          <ion-row>
-            <ion-radio-group value="alergia">
-              <ion-col>
-                <label>¿Antecedentes al&eacute;rgicos?:</label>
-              </ion-col>
-              <ion-col><ion-radio value="si">Si</ion-radio></ion-col>
-
-              <ion-col> <ion-radio value="no">No</ion-radio></ion-col>
-            </ion-radio-group>
-          </ion-row>
-          <br />
-          <input
-            type="text"
-            id="otroalerg"
-            class="form-control"
-            placeholder="En caso de ser cierto, especifique su caso"
-          />
-        </div>
-        <br />
-
-        <div class="form-group">
-          <ion-row>
-            <ion-radio-group value="hospitalizado">
-              <ion-col>
-                <label>¿Ha sido hospitalizado?:</label>
-              </ion-col>
-              <ion-col><ion-radio value="tabaco">Si</ion-radio></ion-col>
-
-              <ion-col> <ion-radio value="alcohol">No</ion-radio></ion-col>
-            </ion-radio-group>
-          </ion-row>
-          <br />
-          <input
-            type="text"
-            id="hospit"
-            class="form-control"
-            placeholder="Describa el motivo y fecha aproximada"
-          />
-          <br />
-          <input
-            type="text"
-            id="padec"
-            class="form-control"
-            placeholder="Padecimiento actual"
-          />
-        </div>
+        
 
         <br /><br /><br />
         <ion-button type="submit" expand="full" shape="round"

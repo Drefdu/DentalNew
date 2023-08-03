@@ -40,5 +40,9 @@ export class DatabaseService {
   updateFicha(ficha: {}, _id:String):Observable<any>{
     return this.http.put(this.ficha + "/" + _id, ficha);
   }
+
+  deleteFicha(_id:String):Observable<any>{
+    return this.http.delete(this.ficha + "/" + _id);
+  }
   
 }

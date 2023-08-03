@@ -57,6 +57,7 @@ export class AddUserPage implements OnInit {
     this.database.addFicha(this.ficha).subscribe((data) => {
       console.log(this.ficha);
       this.router.navigate(['/ficha-user']);
+      console.log("hola");
     }, error => {
       console.log(error);
     })

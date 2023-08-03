@@ -11,7 +11,7 @@ export class UserPage implements OnInit {
      
   datosFicha: any = {};
 
-  constructor(private activatedRoute: ActivatedRoute, private database: DatabaseService) { }
+  constructor(private activatedRoute: ActivatedRoute, private database: DatabaseService, private router: Router) { }
   
 
   ngOnInit() {
@@ -24,4 +24,13 @@ export class UserPage implements OnInit {
       })
     });
   }
+  
+  deleteUser(){
+    this.database.deleteFicha(this.datosFicha._id).subscribe((data) => {
+      this.router.navigate(['/ficha-user']);
+    }, (error) => {
+      console.log(error);
+    })
+  }
+  
 }
