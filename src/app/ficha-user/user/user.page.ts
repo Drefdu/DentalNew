@@ -17,14 +17,11 @@ export class UserPage implements OnInit {
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((paramMap) => {
       const recipeId = paramMap.get('_id');
-      console.log(recipeId);
       this.database.getFicha(recipeId!).subscribe((data) => {
         this.datosFicha = data;
-        console.log(data);
       },(error) => {
         console.log(error);
       })
     });
   }
-
 }

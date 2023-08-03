@@ -24,7 +24,6 @@ export class FichaUserPage implements OnInit {
   constructor(private router: Router, private database: DatabaseService, private session: SessionService) { }
 
   ngOnInit() {
-
     onAuthStateChanged(this.auth, async (user) => {
       if (user) {
         this.user = user;
@@ -37,9 +36,24 @@ export class FichaUserPage implements OnInit {
         })
       }
     });
-
-    
   }
+
+  ionViewWillEnter(){
+    onAuthStateChanged(this.auth, async (user) => {
+      if (user) {
+        this.user = user;
+        await this.database.getFichas(this.user.uid).subscribe((data) => {
+          this.fichas = data;
+          console.log(data);
+          this.results = [...this.fichas];
+        },(error) => {
+          console.log(error);
+        })
+      }
+    });
+  }
+
+
   addFicha(){
     this.router.navigate(['/add-user'])
   }
