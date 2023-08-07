@@ -66,6 +66,14 @@ const routes: Routes = [
   {
     path: 'solicitud',
     loadChildren: () => import('./solicitud/solicitud.module').then( m => m.SolicitudPageModule)
+  },
+  {
+    path: 'diente',
+    loadChildren: () => import('./diente/diente.module').then( m => m.DientePageModule)
+  },
+  {
+    path: 'listasolicitud',
+    loadChildren: () => import('./listasolicitud/listasolicitud.module').then( m => m.ListasolicitudPageModule)
   }
 
 ];

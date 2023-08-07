@@ -18,6 +18,8 @@
   height: 10%;
   border-color: azure;
 }
+
+
 @media only screen and (max-width: 600px) {
   #function-container{
       width: 100%;
@@ -25,7 +27,43 @@
   }
 }
 
+.diente img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
 
+
+.diente img.muela {
+  transform: scale(1.6);
+  padding-left: 5px !important;
+  
+  
+}
+
+
+.diente img:hover {
+  filter: brightness(1.2) saturate(2000%) hue-rotate(-90deg);
+  transform: scale(1.5); 
+  
+}
+
+.diente img.muela:hover {
+  filter: brightness(1.2) saturate(2000%) hue-rotate(-90deg);
+  transform: scale(2.1); 
+  
+}
+
+
+
+@media (min-width: 768px) {
+  .diente img:hover {
+    transform: scale(1.4);
+  }
+  .diente img.muela:hover {
+    transform: scale(1.9);
+  }
+}
 
 
 .wrapper3 {
@@ -96,3 +134,7 @@
 ion-content{
   --background: #ffffff;
 }
+
+
+
+

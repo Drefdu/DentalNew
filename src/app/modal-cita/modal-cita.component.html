@@ -1,0 +1,40 @@
+<ion-toolbar color="primary">
+  <ion-title>Lista de acciones</ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+    <div style="padding: 5%;" >
+
+      <ion-row>
+        <ion-col style="text-align: center;">
+          <img src="assets/icon.png" alt="" style="width: 200px; height: 200px; opacity: 20%; filter: grayscale();">
+        </ion-col>
+      
+    </ion-row>
+<br>
+      <ion-row>
+        
+        <ion-col>
+            
+          <ion-button expand="full">Aceptar cita</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="full" color="danger">Rechazar cita</ion-button>
+        </ion-col>
+      </ion-row> <br>
+      <ion-row>
+        <ion-col>
+            Modificar fecha: <br>
+            <input type="date" id="fechacita" class="form-control" />
+        </ion-col>
+      </ion-row> <br>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full">Enviar mensaje</ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-content>

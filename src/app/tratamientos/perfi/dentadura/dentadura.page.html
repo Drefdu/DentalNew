@@ -21,11 +21,62 @@
   <h4 style="color: rgb(255, 255, 255); font-size: 130%;">Historial dental</h4>
   <p class="p" style="color: rgb(255, 255, 255);">Seleccione una pieza para m&aacute;s informaci&oacute;n:</p>
 
-  <div class="diente">
-  <img style="width: 350px;height: auto;display: block;
-  margin-left: auto;
-  margin-right: auto;"  src="assets/teethview.png" alt="">
+
+
+
+  <div class="diente" style="display: flex;
+  justify-content: center; /* Alinea horizontalmente en el centro */
+  align-items: center; /* Alinea verticalmente en el centro */
+  height: 40vh;">
+    <div style="  display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-auto-rows: minmax(90px, 1fr);
+    grid-gap: 5px;
+    max-width: 600px; 
+    margin: 0 auto;">
+
+<img src="assets/images/t_01.png" alt="1" class="muela" >
+<img src="assets/images/t_02.png"alt="2" class="muela">
+<img src="assets/images/t_03.png"alt="3" class="muela">
+
+<img src="assets/images/t_04.png"alt="4">
+<img src="assets/images/t_05.png" alt="5">
+<img src="assets/images/t_06.png" alt="6">
+<img src="assets/images/t_07.png" alt="7">
+<img src="assets/images/t_08.png" alt="8">
+
+<img src="assets/images/t_09.png" alt="9">
+<img src="assets/images/t_10.png" alt="10">
+<img src="assets/images/t_11.png" alt="11">
+<img src="assets/images/t_12.png" alt="12">
+<img src="assets/images/t_13.png" alt="13">
+<img src="assets/images/t_14.png" alt="14" class="muela"> 
+<img src="assets/images/t_15.png" alt="15" class="muela">
+<img src="assets/images/t_16.png" alt="16" class="muela">
+<img src="assets/images/t_17.png" alt="17" class="muela">
+<img src="assets/images/t_18.png" alt="18" class="muela">
+<img src="assets/images/t_19.png" alt="19" class="muela">
+<img src="assets/images/t_20.png" alt="20">
+<img src="assets/images/t_21.png" alt="21">
+<img src="assets/images/t_22.png" alt="22">
+<img src="assets/images/t_23.png" alt="23">
+<img src="assets/images/t_24.png" alt="24">
+<img src="assets/images/t_25.png" alt="25">
+<img src="assets/images/t_26.png" alt="26">
+<img src="assets/images/t_27.png" alt="27">
+<img src="assets/images/t_28.png" alt="28">
+<img src="assets/images/t_29.png" alt="29">
+<img src="assets/images/t_30.png" alt="30" class="muela">
+<img src="assets/images/t_31.png" alt="31" class="muela">
+<img src="assets/images/t_32.png" alt="32" class="muela">
+
+    </div>
+  
 </div>
+
+
+
+
 
  </div>
 
@@ -39,7 +90,47 @@
       <ion-icon name="stop" style="color: rgb(111, 209, 82);"></ion-icon> En tratamiento
     </ion-col>
   </ion-row>
+
  </div>
+
+
+
+
+
+
+
+
+
+ <div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModal()">&times;</span>
+    <h2 id="dienteNombre"></h2>
+    <form>
+      <label for="tratamiento">Tratamiento aplicado:</label>
+      <input type="text" id="tratamiento" name="tratamiento" required>
+      <table>
+        <thead>
+          <tr>
+            <th>Historial de tratamientos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí puedes llenar la tabla con los datos del historial de tratamientos -->
+          <tr>
+            <td>Tratamiento 1</td>
+          </tr>
+          <tr>
+            <td>Tratamiento 2</td>
+          </tr>
+          <!-- ... y así sucesivamente para los demás tratamientos ... -->
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+
+
+
 
 </div>
 
