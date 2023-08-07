@@ -10,6 +10,11 @@ export class DatabaseService {
   
   url = "http://localhost:4000/users";
   ficha = "http://localhost:4000/fichas";
+  citas = "http://localhost:4000/citas";
+  fotos = "http://localhost:4000/fotos";
+  
+
+
 
   constructor(private http: HttpClient) { }
   
@@ -32,6 +37,10 @@ export class DatabaseService {
   getFichas(uid:String):Observable<any>{
     return this.http.get(this.ficha + "/" + uid);
   }
+  
+  getAllFichas():Observable<any>{
+    return this.http.get(this.ficha);
+  }
 
   getFicha(_id:String):Observable<any>{
     return this.http.get(this.ficha + "/ficha/" + _id);
@@ -45,4 +54,28 @@ export class DatabaseService {
     return this.http.delete(this.ficha + "/" + _id);
   }
   
+  getCitas():Observable<any>{
+    return this.http.get(this.citas);
+  }
+  addCita(cita: {}):Observable<any>{
+    return this.http.post(this.citas, cita);
+  }
+
+  addFoto(photo: {}):Observable<any>{
+    
+    const options = {
+      maxFileSize: 10 * 1024 * 1024, // 10MB (o el tamaño necesario)
+    };
+    
+    return this.http.post<any>(this.fotos, photo);
+    
+  }
+
+  getFotos(FichaId: String):Observable<any>{
+    return this.http.get(this.fotos + "/" + FichaId);
+  }
+
+  deleteFoto(id:String):Observable<any>{
+    return this.http.delete(this.fotos + "/" + id);
+  }
 }

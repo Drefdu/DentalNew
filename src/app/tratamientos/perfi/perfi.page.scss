@@ -39,7 +39,15 @@ ion-card-subtitle{
   margin-top: 10%;
   border-radius: 50px 50px 0px 0px;
   background-color: #e0dfe6;
+  height: auto;
+
 }
+#container-fotos{
+  background-color: #e0dfe6;
+  border: 50px;
+  width: 100%;
+}
+
 .icon{
   background-color: rgb(92, 103, 204);
   color: #e0dfe6;
@@ -61,4 +69,23 @@ ion-item{
 .cita{
   font-size: 13px;
   color: #222222;
+}
+
+#container-fotos {
+  margin-top: 20px;
+}
+
+#row-fotos {
+  margin-bottom: 20px;
+}
+
+.img-thumbnail {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover; 
+}
+
+#galeria{
+  height: auto;
+  background-color: #e0dfe6;
 }

@@ -10,7 +10,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
@@ -26,8 +26,8 @@ import { ModalCitaComponentModule } from './modal-cita/modal-cita.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    MbscModule,
+  imports: [  
+    MbscModule,   
     FormsModule,
     BrowserModule,
     IonicModule.forRoot(),
@@ -37,7 +37,7 @@ import { ModalCitaComponentModule } from './modal-cita/modal-cita.module';
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy,}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

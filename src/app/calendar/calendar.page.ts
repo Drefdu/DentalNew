@@ -49,7 +49,18 @@ export class CalendarPage implements OnInit {
     '#4baf4f',
     '#7e5d4e',
   ];
-  myEvents: MbscCalendarEvent[] = [];
+
+  myEvents: MbscCalendarEvent[] = [
+    {
+        title: 'Product planning',
+        color: '#56ca70',
+        start: new Date(2023, 11, 21, 13),
+        end: new Date(2023, 11, 21, 14),
+        busy: true,
+        description: 'Weekly meeting with team',
+        location: 'Office'
+    }
+  ];
   evento = {};
 
   tempEvent!: MbscCalendarEvent;

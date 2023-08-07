@@ -18,8 +18,10 @@ export class SolicitudPage implements OnInit {
   auth = getAuth();
   provider = new GoogleAuthProvider();
 
-  fichas: any = []  
+  fichas: any = []  ;
   public results = [...this.fichas];
+
+  cita = {};
 
   constructor(private router: Router, private database: DatabaseService, private session: SessionService) { }
 
@@ -36,6 +38,21 @@ export class SolicitudPage implements OnInit {
         })
       }
     });
+  }
+
+  addCita(FichaId:any, Motivo:any, Fecha:any, Hora: any){
+    this.cita = {
+      FichaId: FichaId.value,
+      Motivo: Motivo.value,
+      Fecha: Fecha.value,
+      Hora: Hora.value
+    }
+    this.database.addCita(this.cita).subscribe((data) => {
+      alert("Cita solicitada con exito");
+      this.router.navigate(['/home']);
+    }, (error) => {
+      console.log(error);
+    })
   }
 
   cerrarSesion() {

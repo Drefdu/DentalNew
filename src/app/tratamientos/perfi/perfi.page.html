@@ -37,35 +37,47 @@
   </ion-toolbar>
 </ion-header>
 
-
-<div class="ion-page mt-3" id="main-content" >
-  
+<div class="ion-page mt-3" id="main-content">
   <ion-content color="primary">
     <div class="d-flex justify-content-center mt-5">
       <div class="user-card row p-2">
         <div class="col-7 mt-3">
           <div>
             <ion-card-subtitle>Nombre</ion-card-subtitle>
-            <p class="text-primarius"> <span style="color: rgb(81, 111, 245);">{{user.name}}</span></p>
+            <p class="text-primarius">
+              <span style="color: rgb(81, 111, 245)">{{user.Nombre}} {{user.Apellidos}}</span>
+            </p>
           </div>
           <div class="mt-3">
             <div class="row data-user">
-              <div class="col-6">
+              <div class="col-sm-3 col-6">
                 <ion-card-subtitle>Edad</ion-card-subtitle>
-                <p class="text-secundus">20</p>
+                <p class="text-secundus">{{user.Edad}}</p>
               </div>
-              <div class="col-6">
+              <div class="col-sm-3 col-6">
+                <ion-card-subtitle>Sexo</ion-card-subtitle>
+                <p class="text-secundus">{{user.Sexo}}</p>
+              </div>
+              <div class="col-sm-3 col-6">
+                <ion-card-subtitle>Altura</ion-card-subtitle>
+                <p class="text-secundus">{{user.Altura}}</p>
+              </div>
+              <div class="col-sm-3 col-6">
+                <ion-card-subtitle>Telefono</ion-card-subtitle>
+                <p class="text-secundus">{{user.Telefono}}</p>
+              </div>
+<!--               <div class="col-6">
                 <ion-card-subtitle>Sesiones</ion-card-subtitle>
                 <p class="text-secundus">3/4</p>
-              </div>
-              <div class="col-16">
+              </div> -->
+<!--               <div class="col-16">
                 <ion-card-subtitle>Proxima cita:</ion-card-subtitle>
                 <p class="text-secundus">18/08/2023</p>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
-        <div
+<!--         <div
           class="photo col-5 d-flex justify-content-center align-items-center"
         >
           <img
@@ -73,21 +85,18 @@
             alt=""
             class="circle"
           />
-        </div>
+        </div> -->
       </div>
     </div>
 
     <!--Parte blanca  -->
     <div class="d-flex justify-content-center h-100">
       <!-- Contenido de la parte blanca -->
-      <div class="h-100" id="function-container">
+      <div class="" id="function-container">
         <!-- Container del segment -->
         <div class="d-flex justify-content-center">
           <div class="p-0 w-75">
-            <ion-segment
-              value="default"
-              [(ngModel)]="selectTabs" 
-            >
+            <ion-segment value="default" [(ngModel)]="selectTabs">
               <ion-segment-button value="datos">
                 <ion-label>Datos</ion-label>
               </ion-segment-button>
@@ -133,14 +142,14 @@
             color="light"
             class="p-3"
             detail="false"
-            [routerLink]="['datos']"
+            [routerLink]="['/ficha-user/',user._id]"
           >
             <ion-icon
               name="clipboard-outline"
               slot="start"
               class="icon"
             ></ion-icon>
-            <ion-label>Historial dental</ion-label>
+            <ion-label>Ficha de usuario </ion-label>
             <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
           </ion-item>
           <ion-item
@@ -192,53 +201,26 @@
             <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
           </ion-item>
         </div>
-        <div *ngIf="selectTabs == 'galeria'" class="row p-3">
-          <div class="col-12 text-dark">
-            <p>Today</p>
-          </div>
-          <div class="d-flex justify-content-start flex-wrap">
-            <img
-              src="https://pbs.twimg.com/media/EDhM2WfU0AADIG4.jpg"
-              alt=""
-              class="user-photo rounded mx-auto"
-              color="light"
-            />
-            <img
-              src="https://pbs.twimg.com/media/EDhM2WfU0AADIG4.jpg"
-              alt=""
-              class="user-photo rounded mx-auto"
-            />
-            <img
-              src="https://pbs.twimg.com/media/EDhM2WfU0AADIG4.jpg"
-              alt=""
-              class="user-photo rounded mx-auto"
-            />
-            <img
-              src="https://pbs.twimg.com/media/EDhM2WfU0AADIG4.jpg"
-              alt=""
-              class="user-photo rounded mx-auto"
-            />
-            <img
-              src="https://pbs.twimg.com/media/EDhM2WfU0AADIG4.jpg"
-              alt=""
-              class="user-photo rounded mx-auto"
-            />
-            <img
-              src="https://pbs.twimg.com/media/EDhM2WfU0AADIG4.jpg"
-              alt=""
-              class="user-photo rounded mx-auto"
-            />
+
+
+
+        <div *ngIf="selectTabs == 'galeria'" class="w-100" id="galeria" >
+          <div class="container w-100" id="container-fotos">
+            <div class="row" id="row-fotos">
+              <div class="col-md-3" *ngFor="let image of photos">
+                <img [src]="image.Foto" class="img-thumbnail" alt="Image" (click)="setOpenTwo({ arg1: true, arg2: image})"/>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-
-    
     <ion-modal
       #modal
       trigger="open-modal"
       [presentingElement]="presentingElement"
+      [backdropDismiss]="false"
     >
       <ng-template>
         <ion-header>
@@ -303,5 +285,32 @@
         </ion-content>
       </ng-template>
     </ion-modal>
+
+    <ion-modal [isOpen]="isModalOpen"
+    [backdropDismiss]="false">
+      <ng-template>
+        <ion-header class="ion-no-border">
+          <ion-toolbar color="primary">
+            <ion-title>{{this.foto.Fecha}}</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="deleteFoto(this.foto._id)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpenTwo({ arg1: false, arg2: {} })">
+                <ion-icon name="close-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding" color="primary">
+          <div class="d-flex justify-content-center align-items-center">
+            <img [src]="this.foto.Foto" alt="">
+          </div>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
   </ion-content>
 </div>

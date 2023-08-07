@@ -55,8 +55,7 @@
               <ion-col>
                 <label for="altura">Altura:</label>
                 <input type="text" id="altura" class="form-control" #Altura />
-              </ion-col>
-             </ion-row
+              </ion-col> </ion-row
             ><br />
 
             <div class="form-group">
@@ -70,8 +69,8 @@
               >
                 <ion-col><label for="sexo">Sexo:</label></ion-col>
                 <ion-radio-group #Sexo>
-                    <ion-radio value="F" >Femenino</ion-radio>
-                    <ion-radio value="M" >Masculino</ion-radio>
+                  <ion-radio value="F">Femenino</ion-radio>
+                  <ion-radio value="M">Masculino</ion-radio>
                 </ion-radio-group>
               </ion-row>
             </div>
@@ -109,7 +108,12 @@
           >Padecimientos familiares en l&iacute;nea (Ejemplo: Diabetes,
           hipertensi&oacute;n):</label
         >
-        <input type="text" id="padecimientofam" class="form-control" #AntecedentesHereditarios/>
+        <input
+          type="text"
+          id="padecimientofam"
+          class="form-control"
+          #AntecedentesHereditarios
+        />
       </div>
       <br />
       <div class="form-group">
@@ -117,14 +121,14 @@
         <br />
 
         <label>Enfermedades de trasmisió&oacute;n sexual:</label>
-        <input type="text" id="padecimientosex" class="form-control" #ETS/>
+        <input type="text" id="padecimientosex" class="form-control" #ETS />
       </div>
       <br />
       <div class="form-group">
         <label
           >Enfermedades degenerativas (Ejemplo: Alzehaimer, Parkinson):</label
         >
-        <input type="text" id="padecimientodeg" class="form-control" #ED/>
+        <input type="text" id="padecimientodeg" class="form-control" #ED />
       </div>
       <br />
       <div class="form-group">
@@ -132,12 +136,12 @@
           >Enfermedades cong&eacute;nitas (Ejemplo: Defectos del coraz&oacute;n,
           S&iacute;ndrome de Down):</label
         >
-        <input type="text" id="padecimientocon" class="form-control" #EC/>
+        <input type="text" id="padecimientocon" class="form-control" #EC />
       </div>
       <br />
       <div class="form-group">
         <label>Otros padecimientos (Especifique):</label>
-        <input type="text" id="padecimientootros" class="form-control" #OP/>
+        <input type="text" id="padecimientootros" class="form-control" #OP />
       </div>
       <br />
 
@@ -177,31 +181,40 @@
             height: 100%;
           "
         >
-        <ion-radio-group value="ninguno" #auxHigiene>
-          <ion-col>
-            <label>¿Usa auxiliares de higiene bucal?:</label>
-          </ion-col>
-          <ion-col><ion-radio value="Hilo dental">Hilo dental</ion-radio></ion-col>
-          <ion-col> <ion-radio value="Enguaje">Enguaje</ion-radio></ion-col>
-        </ion-radio-group>
+          <ion-radio-group value="No registrado" #auxHigiene>
+            <ion-col>
+              <label>¿Usa auxiliares de higiene bucal?:</label>
+            </ion-col>
+            <ion-col>
+              <ion-radio value="Hilo dental">Hilo dental</ion-radio></ion-col>
+            <ion-col> 
+              <ion-radio value="Enguaje">Enguaje</ion-radio>
+            </ion-col>
+            <ion-col> 
+              <ion-radio value="Ninguno">Ninguno</ion-radio>
+            </ion-col>
+          </ion-radio-group>
         </ion-row>
       </div>
       <br />
 
       <div class="form-group">
         <label>Adicciones:</label>
-        <input type="text" id="adicciones" class="form-control" #adicciones/>
+        <input type="text" id="adicciones" class="form-control" #adicciones />
       </div>
       <br />
 
       <div class="form-group">
         <label>¿Antecedentes al&eacute;rgicos?:</label>
-        <input type="text" id="otroalerg" class="form-control" #alergias/>
+        <input type="text" id="otroalerg" class="form-control" #alergias />
       </div>
       <br />
 
       <br /><br /><br />
-      <ion-button expand="full" shape="round" (click)="addFicha(Nombre, Apellidos, Sexo, Telefono, Edad, Altura,AntecedentesHereditarios,
+      <ion-button
+        expand="full"
+        shape="round"
+        (click)="addFicha(Nombre, Apellidos, Sexo, Telefono, Edad, Altura,AntecedentesHereditarios,
       ETS,ED,EC,OP,auxHigiene,LimpDientes,adicciones,alergias)"
         >Enviar respuestas</ion-button
       >

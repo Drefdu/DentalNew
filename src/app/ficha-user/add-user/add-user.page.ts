@@ -41,15 +41,15 @@ export class AddUserPage implements OnInit {
       Telefono: Telefono.value,
       Edad: Edad.value,
       Altura:Altura.value,
-      AntecedentesHereditarios:AntecedentesHereditarios.value,
-      ETS:ETS.value,
-      ED:ED.value,
-      EC:EC.value,
-      OP:OP.value,
-      auxHigiene:auxHigiene.value,
-      LimpDientes:LimpDientes.value,
-      adicciones:adicciones.value,
-      alergias:alergias.value
+      AntecedentesHereditarios:AntecedentesHereditarios.value || "No registrados",
+      ETS:ETS.value  || "No registrados",
+      ED:ED.value  || "No registrados",
+      EC:EC.value  || "No registrados",
+      OP:OP.value  || "No registrados",
+      auxHigiene:auxHigiene.value || "No registrados",
+      LimpDientes:LimpDientes.value || "No registrados",
+      adicciones:adicciones.value || "No registrados",
+      alergias:alergias.value || "No registrados"
     }
     console.log(this.ficha);
 

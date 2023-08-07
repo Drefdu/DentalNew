@@ -64,25 +64,20 @@
 
 
             <div class="form-group">
-              <label for="motivo">Motivo de la consulta:</label>
-              <textarea id="motivo" class="form-control"></textarea>
+              <label for="motivo" >Motivo de la consulta:</label>
+              <textarea id="motivo" class="form-control"  #Motivo ></textarea>
               <br />
-            </div>
-
-            <div class="form-group">
-              <label for="namemedico">Nombre del m&eacute;dico:</label>
-              <input type="text" id="namemedico" class="form-control" /> <br />
             </div>
 
             <div class="form-group">
               <ion-row>
                 <ion-col>
                   <label for="fechacita">Fecha deseada para su cita:</label>
-                  <input type="date" id="fechacita" class="form-control" />
+                  <input type="date" id="fechacita" class="form-control" #Fecha />
                 </ion-col>
                 <ion-col>
                   <label for="horacita">Hora:</label>
-                  <input type="time" id="appt" class="input bg-light" name="appt" min="09:00" max="18:00"/>
+                  <input type="time" id="appt" class="input bg-light" name="appt" min="09:00" max="18:00" #Hora/>
                 </ion-col>
  
 
@@ -96,14 +91,14 @@
         <br />
         <div class="input-group mb-3">
           <label class="input-group-text" for="inputGroupSelect01">Ficha</label>
-          <select class="form-select" id="inputGroupSelect01" *ngFor="let result of results">
-            <option [value]="result._id">{{result.Nombre}} {{result.Apellidos}}</option>
+          <select class="form-select" id="inputGroupSelect01" #FichaId>
+            <option *ngFor="let result of results" [value]="result._id" >{{result.Nombre}} {{result.Apellidos}}</option>
           </select>
         </div>
         
 
         <br /><br /><br />
-        <ion-button type="submit" expand="full" shape="round"
+        <ion-button type="submit" expand="full" shape="round" (click)="addCita(FichaId, Motivo, Fecha, Hora)"
           >Enviar respuestas</ion-button
         >
       </div>

@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: 'perfi',
     loadChildren: () => import('./perfi/perfi.module').then( m => m.PerfiPageModule)
-  },
+  }
 ];
 
 @NgModule({
