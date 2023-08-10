@@ -12,51 +12,93 @@ import { Router } from '@angular/router';
   styleUrls: ['./solicitud.page.scss'],
 })
 export class SolicitudPage implements OnInit {
-
   user: any = {};
-  app = initializeApp(environment.firebaseConfig)
+  app = initializeApp(environment.firebaseConfig);
   auth = getAuth();
   provider = new GoogleAuthProvider();
 
-  fichas: any = []  ;
+  fichas: any = [];
   public results = [...this.fichas];
 
   cita = {};
 
-  constructor(private router: Router, private database: DatabaseService, private session: SessionService) { }
+  constructor(
+    private router: Router,
+    private database: DatabaseService,
+    private session: SessionService
+  ) {}
 
   ngOnInit() {
     onAuthStateChanged(this.auth, async (user) => {
       if (user) {
         this.user = user;
-        await this.database.getFichas(this.user.uid).subscribe((data) => {
-          this.fichas = data;
-          console.log(data);
-          this.results = [...this.fichas];
-        },(error) => {
-          console.log(error);
-        })
+        await this.database.getFichas(this.user.uid).subscribe(
+          (data) => {
+            this.fichas = data;
+            console.log(data);
+            this.results = [...this.fichas];
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
       }
     });
   }
 
-  addCita(FichaId:any, Motivo:any, Fecha:any, Hora: any){
+  addCita(FichaId: any, Motivo: any, Fecha: any, Hora: any) {
     this.cita = {
       FichaId: FichaId.value,
       Motivo: Motivo.value,
       Fecha: Fecha.value,
-      Hora: Hora.value
-    }
-    this.database.addCita(this.cita).subscribe((data) => {
-      alert("Cita solicitada con exito");
-      this.router.navigate(['/home']);
-    }, (error) => {
-      console.log(error);
-    })
+      Hora: Hora.value,
+    };
+    this.database.addCita(this.cita).subscribe(
+      (data) => {
+        alert('Cita solicitada con exito');
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  async addEvento(description: any, FichaId: any, start: any) {
+    let fecha = new Date(start.value);
+    let inicio = fecha.setHours(fecha.getHours() - 6);
+    let end = fecha.setHours(fecha.getHours() + 1);
+    let ficha: any = {};
+    
+    this.database.getFicha(FichaId.value).subscribe(
+      (data) => {
+        ficha = data;
+
+        let evento = {
+          description: description.value,
+          FichaId: FichaId.value,
+          start: inicio,
+          end: end,
+          title: ficha.Nombre + ' ' + ficha.Apellidos,
+        };
+
+        this.database.addEvento(evento).subscribe(
+          () => {
+            console.log('enviado con exito');
+            this.router.navigate(["/home"]);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   cerrarSesion() {
     this.session.signOut();
   }
-
 }

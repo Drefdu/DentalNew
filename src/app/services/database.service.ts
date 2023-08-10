@@ -12,7 +12,7 @@ export class DatabaseService {
   ficha = "http://localhost:4000/fichas";
   citas = "http://localhost:4000/citas";
   fotos = "http://localhost:4000/fotos";
-  
+  eventos = "http://localhost:4000/eventos"
 
 
 
@@ -77,5 +77,21 @@ export class DatabaseService {
 
   deleteFoto(id:String):Observable<any>{
     return this.http.delete(this.fotos + "/" + id);
+  }
+
+  getEventos():Observable<any>{
+    return this.http.get(this.eventos);
+  }
+
+  addEvento(evento: {}):Observable<any>{
+    return this.http.post(this.eventos, evento);
+  }
+
+  updateEvento(evento: {}, _id:String):Observable<any>{
+    return this.http.put(this.eventos + "/" + _id, evento);
+  }
+
+  deleteEvento(_id:String):Observable<any>{
+    return this.http.delete(this.eventos + "/" + _id);
   }
 }

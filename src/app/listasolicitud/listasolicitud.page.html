@@ -30,8 +30,6 @@
   </ion-content>
 </ion-menu>
 
-
-
 <div class="ion-page" id="main-content">
   <ion-header class="ion-no-border">
     <ion-toolbar color="primary">
@@ -56,38 +54,33 @@
             clear-icon="trash-bin"
             color="light"
             placeholder="buscar"
-            
           ></ion-searchbar>
         </div>
         <div class="h-100" id="container-blanco">
           <div class="d-flex justify-content-center">
             <ion-list class="mt-5 w-100" id="list">
-              <ion-item  id="item" (click)="modalCita()" >
+              <ion-item id="item" (click)="modalCita(evento)" *ngFor="let evento of eventos">
                 <ion-label id="label">
                   <div class="row">
                     <div class="col-12">
                       <p class="fs-6 fw-bold" style="margin-bottom: 2%">
-                        Nombre del consultante
+                        {{evento.title}}
                       </p>
                     </div>
                     <div>
                       <ion-row>
                         <ion-col>
-                          <p>Fecha:</p>
+                          <p>Inicia: {{evento.start}} </p>
                         </ion-col>
-                        <ion-col>
-                          Hora:
-                        </ion-col>
+                        <ion-col> Termina: {{evento.end}}</ion-col>
                       </ion-row>
                     </div>
                     <div class="row">
                       <div class="col-6 col-sm-2 col-lg-1">
-                        <p>Motivo de consulta:</p> 
-                      
+                        <p>Motivo de consulta: {{evento.description}}</p>
                       </div>
                     </div>
                   </div>
-                  
                 </ion-label>
               </ion-item>
             </ion-list>
@@ -101,9 +94,12 @@
     <ng-template>
       <ion-content>
         <ion-list>
-          <ion-item [button]="true" [detail]="false">Ordenar por fecha</ion-item>
-          <ion-item [button]="true" [detail]="false">Ordenar afalb&eacute;ticamente</ion-item>
-   
+          <ion-item [button]="true" [detail]="false"
+            >Ordenar por fecha</ion-item
+          >
+          <ion-item [button]="true" [detail]="false"
+            >Ordenar afalb&eacute;ticamente</ion-item
+          >
         </ion-list>
       </ion-content>
     </ng-template>

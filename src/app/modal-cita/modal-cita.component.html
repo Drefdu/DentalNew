@@ -19,16 +19,20 @@
         
         <ion-col>
             
-          <ion-button expand="full">Aceptar cita</ion-button>
+          <ion-button expand="full" (click)="aceptar(start)">Aceptar cita</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button expand="full" color="danger">Rechazar cita</ion-button>
+          <ion-button expand="full" color="danger" (click)="eliminar()">Rechazar cita</ion-button>
         </ion-col>
       </ion-row> <br>
       <ion-row>
         <ion-col>
             Modificar fecha: <br>
-            <input type="date" id="fechacita" class="form-control" />
+           <div class="d-flex justify-content-center align-items-center">
+            <ion-datetime
+            #start
+          ></ion-datetime>
+           </div>
         </ion-col>
       </ion-row> <br>
       <ion-row>

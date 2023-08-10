@@ -61,26 +61,42 @@
 
         <div class="row">
           <div class="col-md-6">
-
-
             <div class="form-group">
-              <label for="motivo" >Motivo de la consulta:</label>
-              <textarea id="motivo" class="form-control"  #Motivo ></textarea>
+              <label for="motivo">Motivo de la consulta:</label>
+              <textarea
+                id="motivo"
+                class="form-control"
+                #description
+              ></textarea>
               <br />
             </div>
 
             <div class="form-group">
               <ion-row>
-                <ion-col>
+                <!--  <ion-col>
                   <label for="fechacita">Fecha deseada para su cita:</label>
-                  <input type="date" id="fechacita" class="form-control" #Fecha />
-                </ion-col>
+                  <input
+                    type="date"
+                    id="fechacita"
+                    class="form-control"
+                    #Fecha
+                  />
+                </ion-col> -->
                 <ion-col>
-                  <label for="horacita">Hora:</label>
-                  <input type="time" id="appt" class="input bg-light" name="appt" min="09:00" max="18:00" #Hora/>
+                  <!--  <label for="horacita">Hora:</label>
+                  <input
+                    type="time"
+                    id="appt"
+                    class="input bg-light"
+                    name="appt"
+                    min="09:00"
+                    max="18:00"
+                    #Hora
+                  /> -->
+                  <ion-datetime locale="es-ES"
+                    #start
+                  ></ion-datetime>
                 </ion-col>
- 
-
               </ion-row>
             </div>
           </div>
@@ -92,13 +108,18 @@
         <div class="input-group mb-3">
           <label class="input-group-text" for="inputGroupSelect01">Ficha</label>
           <select class="form-select" id="inputGroupSelect01" #FichaId>
-            <option *ngFor="let result of results" [value]="result._id" >{{result.Nombre}} {{result.Apellidos}}</option>
+            <option *ngFor="let result of results" [value]="result._id" #start>
+              {{result.Nombre}} {{result.Apellidos}}
+            </option>
           </select>
         </div>
-        
 
         <br /><br /><br />
-        <ion-button type="submit" expand="full" shape="round" (click)="addCita(FichaId, Motivo, Fecha, Hora)"
+        <ion-button
+          type="submit"
+          expand="full"
+          shape="round"
+          (click)="addEvento(description, FichaId, start)"
           >Enviar respuestas</ion-button
         >
       </div>
