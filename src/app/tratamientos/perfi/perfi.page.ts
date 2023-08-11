@@ -4,6 +4,12 @@ import { DataService } from 'src/app/services/data.service';
 import { CameraService } from 'src/app/services/camera.service';
 import { DatabaseService } from 'src/app/services/database.service';
 
+import { SessionService } from '../../services/session.service';
+import { initializeApp } from 'firebase/app';
+import { GoogleAuthProvider, getAuth, onAuthStateChanged } from 'firebase/auth';
+import { environment } from 'src/environments/environment';
+
+
 interface ModalOptions {
   backdropDismiss: false;
 }
@@ -14,6 +20,12 @@ interface ModalOptions {
   styleUrls: ['./perfi.page.scss'],
 })
 export class PerfiPage implements OnInit {
+
+
+  app = initializeApp(environment.firebaseConfig)
+  auth = getAuth();
+  provider = new GoogleAuthProvider();
+
   selectTabs = 'datos';
   isModalOpen = false;
   isModalOpenTwo = false;
@@ -37,7 +49,8 @@ export class PerfiPage implements OnInit {
     private dataService: DataService,
     private camera: CameraService,
     private router: Router,
-    private database: DatabaseService
+    private database: DatabaseService,
+    private session: SessionService,
   ) {}
 
   public actionSheetButtons = [
@@ -62,6 +75,13 @@ export class PerfiPage implements OnInit {
   photos: any = [];
 
   ngOnInit() {
+    onAuthStateChanged(this.auth, (user) => {
+      if (user) {
+        this.user = user;
+        console.log(this.user);
+      }
+    });
+    
     this.presentingElement = document.querySelector('.ion-page');
     this.activatedRoute.paramMap.subscribe((paramMap) => {
       const recipeId = paramMap.get('userId');
@@ -138,4 +158,8 @@ export class PerfiPage implements OnInit {
   }
   
 
+
+  cerrarSesion() {
+    this.session.signOut();
+  }
 }

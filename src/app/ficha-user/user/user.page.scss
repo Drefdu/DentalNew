@@ -77,15 +77,14 @@ p {
 }
 
 .header {
-  margin-left: 4%;
-  margin-right: 4%;
+
   background-image: url(https://files.jotform.com/jufs/VanessaDavid/form_files/undraw_doctors_hwty.5d19e0a05407a2.65386694.png?md5=vedzalHVUpYu3YvzQK1jPg&expires=1689299342);
-  background-size: cover 150%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100%;
   height: 55%;
-  border-radius: 0 0 50px 50px;
+  background-color: rgb(101, 116, 255);
+  border-radius: 0 0 300px 300px;
   display: flex;
   flex-direction: column;
   color: white;

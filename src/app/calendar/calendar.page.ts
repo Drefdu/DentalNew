@@ -14,17 +14,38 @@ import { Router } from '@angular/router';
 import { DatabaseService } from '../services/database.service';
 
 
+import { initializeApp } from 'firebase/app';
+import { GoogleAuthProvider, getAuth, onAuthStateChanged } from 'firebase/auth';
+import { environment } from 'src/environments/environment';
+import { SessionService } from '../services/session.service';
+
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.page.html',
   styleUrls: ['./calendar.page.scss'],
 })
 export class CalendarPage implements OnInit {
+
+
+  user: any = {};
+  app = initializeApp(environment.firebaseConfig)
+  auth = getAuth();
+  provider = new GoogleAuthProvider();
+
+
   constructor(
     private http: HttpClient,
     private notify: Notifications,
     private router: Router,
-    private database: DatabaseService
+    private database: DatabaseService,
+
+
+
+
+    private session: SessionService
+
+
   ) {}
   @ViewChild('popup', { static: false })
   popup!: MbscPopup;
@@ -287,6 +308,16 @@ export class CalendarPage implements OnInit {
   }
 
   ngOnInit(): void {
+
+    onAuthStateChanged(this.auth, (user) => {
+      if (user) {
+        this.user = user;
+        console.log(this.user);
+      }
+    });
+
+
+
     this.database.getEventos().subscribe(
       (data) => {
         let eventos: any = [];
@@ -300,5 +331,10 @@ export class CalendarPage implements OnInit {
         console.log(error);
       }
     );
+  }
+
+
+  cerrarSesion() {
+    this.session.signOut();
   }
 }
