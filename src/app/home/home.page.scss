@@ -78,8 +78,24 @@ p {
   display: flex;
   flex-direction: column;
   color: white;
+  
+  
 }
 
 ion-content {
   --background: #e0dfe6;
+}
+
+@media (min-width: 768px) {
+
+  .header {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 65%;
+    border-radius: 0 0 300px 300px;
+
+  }
+
 }
