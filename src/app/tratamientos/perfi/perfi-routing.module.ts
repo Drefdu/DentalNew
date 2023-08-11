@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'datos',
     loadChildren: () => import('./datos/datos.module').then( m => m.DatosPageModule)
+  },
+  {
+    path: 'pulse',
+    loadChildren: () => import('./pulse/pulse.module').then( m => m.PulsePageModule)
   }
 ];
 
