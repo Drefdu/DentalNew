@@ -42,9 +42,8 @@ export class DentaduraPage implements OnInit {
         this.user = this.users[recipeId!];
       })
       
-     });
+     }); 
   }
 
-  
 
 }

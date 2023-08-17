@@ -31,13 +31,13 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  filter: invert(64%) sepia(64%) saturate(1708%) hue-rotate(80deg) brightness(125%) contrast(117%);
 }
 
 
 .diente img.muela {
   transform: scale(1.6);
-  padding-left: 5px !important;
-  
+  padding-left: 5px !important;  
   
 }
 
