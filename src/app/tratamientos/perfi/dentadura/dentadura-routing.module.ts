@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: DentaduraPage
+  },
+  {
+    path: 'form-diente',
+    loadChildren: () => import('./form-diente/form-diente.module').then( m => m.FormDientePageModule)
+  },
+  {
+    path: 'edit-diente',
+    loadChildren: () => import('./edit-diente/edit-diente.module').then( m => m.EditDientePageModule)
   }
 ];
 

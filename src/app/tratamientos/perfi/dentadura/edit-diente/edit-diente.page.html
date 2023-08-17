@@ -1,0 +1,58 @@
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref=""></ion-back-button>
+      </ion-buttons>
+      <ion-label>Editar informacion</ion-label>
+      
+      
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-content >
+
+    <div class="header"></div>
+
+    <div class="wrapper">
+  <div class="patient-info">
+    <div class="form-group">
+      <label for="">Nombre:</label>
+      <input
+        type="text"
+        id="nombrediente"
+        class="form-control"
+        readonly
+        [value]=""
+      />
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="telefono">Tratamiento:</label>
+      <input
+        type="text"
+        id="tratamiento"
+        class="form-control"
+        #tratamiento
+      />
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="estado-diente">Estado del diente:</label>
+      <input
+        type="text"
+        id="estadodiente"
+        readonly
+        class="form-control"
+        #Apellidos
+      />
+    </div>
+    <br>
+    <ion-button expand="full" shape="round"
+      >Enviar respuestas</ion-button
+    >
+  </div>
+</div>
+  </ion-content>
+</div>

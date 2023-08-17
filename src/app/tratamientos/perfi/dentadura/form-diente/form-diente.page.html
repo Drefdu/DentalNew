@@ -1,0 +1,70 @@
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref=""></ion-back-button>
+      </ion-buttons>
+
+      <ion-label>Informacion</ion-label>
+      
+      <ion-buttons slot="end">
+        <button slot="end" class="contB" [routerLink]="['../edit-diente']">
+          <ion-icon class="editar" name="pencil-outline" ></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-content >
+
+    <div class="header"></div>
+
+    <div class="wrapper">
+  <div class="patient-info">
+    <div class="form-group">
+      <label for="fecha-nacimiento">Nombre:</label>
+      <input
+        type="text"
+        id="nombrediente"
+        class="form-control"
+        readonly
+      />
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="telefono">Tratamiento:</label>
+      <input
+        type="text"
+        id="tratamiento"
+        class="form-control"
+        readonly
+      />
+    </div>
+    <br>
+    <div class="imgDiente">
+      <label for="imagen-diente">Imagen del diente:</label>
+      <div class="text-center">
+        <img
+          src="https://img.freepik.com/vector-gratis/3d-diente-humano-aislado_1308-117621.jpg?w=2000"
+          alt="Imagen del diente"
+          class="diente-image"
+        />
+      </div>
+    </div>
+    
+    <br>
+    <div class="form-group">
+      <label for="estado-diente">Estado del diente:</label>
+      <input
+        type="text"
+        id="estadodiente"
+        readonly
+        class="form-control"
+      />
+    </div>
+    <br>
+  </div>
+</div>
+  </ion-content>
+</div>
