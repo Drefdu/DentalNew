@@ -14,6 +14,7 @@ export class DatabaseService {
   fotos = "http://localhost:4000/fotos";
   eventos = "http://localhost:4000/eventos"
   puslo = "http://localhost:4000/pulso";
+  chat = "http://localhost:4000/mensajes/";
 
 
   constructor(private http: HttpClient) { }
@@ -106,4 +107,13 @@ export class DatabaseService {
   getPulso(id: String):Observable<any>{
     return this.http.get(this.puslo + "/" + id)
   }
+
+  addMensaje(mensaje: {}):Observable<any>{
+    return this.http.post(this.chat, mensaje);
+  }
+
+  getuserMensajes(id: String):Observable<any>{
+    return this.http.get(this.chat + id);
+  }
 }
+

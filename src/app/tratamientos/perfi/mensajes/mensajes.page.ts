@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
+import { DatabaseService } from 'src/app/services/database.service';
 
 
 interface Message {
@@ -18,54 +19,87 @@ interface Message {
 export class MensajesPage implements OnInit {
   
   
-  constructor(private activatedRoute: ActivatedRoute, private dataService: DataService) {}
+  constructor(private activatedRoute: ActivatedRoute, private dataService: DataService, private database: DatabaseService) {}
 
-  messages: Message[] = [
-    {
-      text: 'Hola, que tal!!',
-      time: '10:00 AM',
-      incoming: true
-    },
-    {
-      text: 'me gustaria agendar una cita',
-      time: '10:01 AM',
-      incoming: true
-    }
-  ];
+  messages: any = [];
     
   newMessage: string = '';
   user: any = {};
   userId:any = ''
   users: any = [];
     
+  uid: any;
+
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((paramMap) => {
       const recipeId = paramMap.get('userId');
-      console.log(recipeId);
       this.userId = recipeId;
+      
+      this.database.getFicha(this.userId).subscribe((data) => {
+        this.user = data;
+        this.uid = this.user.UserId;
+        
+        this.database.getuserMensajes(this.uid).subscribe((data) => {
+          console.log("mensajes actualizados");
+          this.messages = data;
+          console.log(this.user);
+        }, (error) => {
+          console.log(error);
+        })
+      }, (error) => {
+        console.log(error);
+      })
+
+      
+
     });
   }
 
   sendMessage() {
     if (this.newMessage.trim() !== '') {
       const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      this.messages.push({
+      
+      let message = {
         text: this.newMessage,
         time: currentTime,
-        incoming: false
-      });
+        incoming: false,
+        senderId: "admin",
+        recipeId: this.uid
+      }
+      this.database.addMensaje(message).subscribe((data) => {
+        console.log("Mensaje enviado");
+
+        this.database.getuserMensajes(this.uid).subscribe((data) => {
+          console.log("mensajes actualizados");
+          this.messages = data;
+        }, (error) => {
+          console.log(error);
+        })
+      })
+      
+      
+
       this.newMessage = '';
     }
   }
   ionViewWillEnter(){
     this.activatedRoute.paramMap.subscribe((paramMap) => {
       const recipeId = paramMap.get('userId');
-      console.log(recipeId);
-      this.dataService.getUsers().subscribe(data =>{
-        this.users = data;
-        this.user = this.users[recipeId!];
-      })
+      this.userId = recipeId;
       
-     });
-  }
+      this.database.getFicha(this.userId).subscribe((data) => {
+        this.user = data;
+        this.uid = this.user.UserId;
+        
+        this.database.getuserMensajes(this.uid).subscribe((data) => {
+          console.log("mensajes actualizados");
+          this.messages = data;
+          console.log(this.user);
+        }, (error) => {
+          console.log(error);
+        })
+      }, (error) => {
+        console.log(error);
+      })
+  })}
 }
