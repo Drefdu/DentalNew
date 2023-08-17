@@ -13,7 +13,7 @@ export class DatabaseService {
   citas = "http://localhost:4000/citas";
   fotos = "http://localhost:4000/fotos";
   eventos = "http://localhost:4000/eventos"
-
+  puslo = "http://localhost:4000/pulso";
 
 
   constructor(private http: HttpClient) { }
@@ -97,5 +97,13 @@ export class DatabaseService {
 
   deleteEvento(_id:String):Observable<any>{
     return this.http.delete(this.eventos + "/" + _id);
+  }
+
+  addPulso(pulso: {}):Observable<any>{
+    return this.http.post(this.puslo, pulso )
+  }
+  
+  getPulso(id: String):Observable<any>{
+    return this.http.get(this.puslo + "/" + id)
   }
 }
