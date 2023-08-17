@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tratamientos/{{userId}}"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mensajes</ion-title>
+  </ion-toolbar>
+</ion-header> 
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let message of messages; let i = index" class="message-item" [class.incoming]="!message.incoming" [class.outgoing]="message.incoming">
+      <ion-label class="cont">
+        <div class="message-content">{{ message.text }}</div>
+        <div class="message-time">{{ message.time }}</div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-footer>
+    <ion-toolbar class="newMessage2">
+      <ion-grid>
+        <ion-row>
+            <ion-input [(ngModel)]="newMessage" placeholder="Type a message..."></ion-input>
+  
+            <ion-button (click)="sendMessage()"><ion-icon name="send"></ion-icon></ion-button>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
+

@@ -74,6 +74,10 @@ const routes: Routes = [
   {
     path: 'listasolicitud',
     loadChildren: () => import('./listasolicitud/listasolicitud.module').then( m => m.ListasolicitudPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   }
 
 ];
