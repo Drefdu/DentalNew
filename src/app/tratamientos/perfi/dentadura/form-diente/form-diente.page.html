@@ -8,7 +8,7 @@
       <ion-label>Informacion</ion-label>
       
       <ion-buttons slot="end">
-        <button slot="end" class="contB" [routerLink]="['../edit-diente']">
+        <button slot="end" class="contB" [routerLink]="['../../edit-diente/', recipeId]">
           <ion-icon class="editar" name="pencil-outline" ></ion-icon>
         </button>
       </ion-buttons>
@@ -29,16 +29,20 @@
         id="nombrediente"
         class="form-control"
         readonly
+        [placeholder]="diente.Nombre"
+       
       />
     </div>
     <br>
     <div class="form-group">
-      <label for="telefono">Tratamiento:</label>
+      <label for="telefono">Tratamiento: </label>
       <input
         type="text"
         id="tratamiento"
         class="form-control"
         readonly
+        [placeholder]="diente.Tratamiento"
+        
       />
     </div>
     <br>
@@ -61,6 +65,8 @@
         id="estadodiente"
         readonly
         class="form-control"
+        [placeholder]="diente.Estado"
+     
       />
     </div>
     <br>

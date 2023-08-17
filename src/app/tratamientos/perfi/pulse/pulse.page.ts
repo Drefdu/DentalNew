@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from 'src/app/services/data.service';
 import { DatabaseService } from 'src/app/services/database.service';
 
 
@@ -14,12 +13,19 @@ export class PulsePage implements OnInit {
   selectTabs = 'cardio1';
   valor: any = [];
   cardio: any = {};
-
+  user: any = {};
+  userId:any = ''
+  users: any = [];
+    
+  uid: any;
   public result = [...this.valor];
-  constructor(private activatedRoute: ActivatedRoute, private dataService: DataService, private database: DatabaseService) { }
+  constructor(private activatedRoute: ActivatedRoute, private database: DatabaseService) { }
 
   ngOnInit() {
-  
+    this.activatedRoute.paramMap.subscribe((paramMap) => {
+      const recipeId = paramMap.get('userId');
+      this.userId = recipeId;
+    });
   }
 
 
@@ -32,6 +38,7 @@ export class PulsePage implements OnInit {
         console.log(this.valor);
         this.result = [...this.valor];
         this.cardio = this.result[0];
+        console.log(this.cardio.valor);
       });
     }, intervalTime);
   }

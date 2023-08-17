@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataService } from 'src/app/services/data.service';
 import { CameraService } from 'src/app/services/camera.service';
 import { DatabaseService } from 'src/app/services/database.service';
 
@@ -46,7 +45,6 @@ export class PerfiPage implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private dataService: DataService,
     private camera: CameraService,
     private router: Router,
     private database: DatabaseService,

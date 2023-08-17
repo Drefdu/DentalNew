@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
 import { DatabaseService } from '../services/database.service';
 import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider, getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -30,7 +29,6 @@ export class TratamientosPage implements OnInit {
 
 
   constructor(
-    private datosService: DataService,
     private database: DatabaseService,
     private session: SessionService
   ) {}

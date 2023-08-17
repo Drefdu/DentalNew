@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from '../services/database.service';
 import { SessionService } from '../services/session.service';
@@ -15,7 +14,6 @@ import { environment } from 'src/environments/environment';
 export class ChatPage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
-    private dataService: DataService,
     private database: DatabaseService,
     private session: SessionService
   ) {}

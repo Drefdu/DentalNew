@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="perfil">Regresar</ion-back-button>
+      <ion-back-button defaultHref="tratamientos/{{userId}}"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -35,8 +35,10 @@
         <g>
           <use xlink:href="#b" fill-opacity="0" stroke="#06748C" />
         </g></svg>
+        <ion-text>Pulso: {{cardio.valor}}</ion-text>
     </div> <br>
-    <ion-button color="primary" style="width: 80%;">Calcular</ion-button>
+    
+    <ion-button color="primary" style="width: 80%;" (click)="pulseUser()">Calcular</ion-button>
     <br> <br>
     <div class="d-flex justify-content-center" >
       <div class="fondo h-100" id="container-info" style=" width: 80%;">

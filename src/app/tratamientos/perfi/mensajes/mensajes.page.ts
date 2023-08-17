@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from 'src/app/services/data.service';
 import { DatabaseService } from 'src/app/services/database.service';
 
 
@@ -19,7 +18,7 @@ interface Message {
 export class MensajesPage implements OnInit {
   
   
-  constructor(private activatedRoute: ActivatedRoute, private dataService: DataService, private database: DatabaseService) {}
+  constructor(private activatedRoute: ActivatedRoute, private database: DatabaseService) {}
 
   messages: any = [];
     

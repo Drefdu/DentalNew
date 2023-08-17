@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-datos',
@@ -11,30 +10,17 @@ export class DatosPage implements OnInit {
   user: any = {};
   userId:any = ''
   users: any = [];
-  constructor(private activatedRoute: ActivatedRoute, private dataService: DataService) {}
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.activatedRoute.paramMap.subscribe((paramMap) => {
-      const recipeId = paramMap.get('userId');
-      console.log(recipeId);
-      this.userId = recipeId;
-      this.dataService.getUsers().subscribe(data =>{
-        this.users = data;
-        this.user = this.users[recipeId!];
-      })
+   
       
-     });
+  
   }
   ionViewWillEnter(){
-    this.activatedRoute.paramMap.subscribe((paramMap) => {
-      const recipeId = paramMap.get('userId');
-      console.log(recipeId);
-      this.dataService.getUsers().subscribe(data =>{
-        this.users = data;
-        this.user = this.users[recipeId!];
-      })
+   
       
-     });
+    
   }
 
 }

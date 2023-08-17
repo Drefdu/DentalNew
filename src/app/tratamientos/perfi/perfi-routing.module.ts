@@ -14,7 +14,20 @@ const routes: Routes = [
   },
   {
     path: 'dentadura',
-    loadChildren: () => import('./dentadura/dentadura.module').then( m => m.DentaduraPageModule)
+    children: [
+      {
+        path: "",
+        loadChildren: () => import('./dentadura/dentadura.module').then( m => m.DentaduraPageModule)
+      },
+      {
+        path: "form-diente/",
+        loadChildren: () => import('./dentadura/dentadura.module').then( m => m.DentaduraPageModule)
+      },
+      {
+        path: "edit-diente/",
+        loadChildren: () => import('./dentadura/dentadura.module').then( m => m.DentaduraPageModule)
+      },
+    ]
   },
   {
     path: 'datos',

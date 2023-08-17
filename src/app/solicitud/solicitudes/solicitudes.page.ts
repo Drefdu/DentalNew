@@ -5,7 +5,7 @@ import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider, getAuth, onAuthStateChanged } from 'firebase/auth';
 import { environment } from 'src/environments/environment';
 import { SessionService } from '../../services/session.service';
-import { DataService } from '../../services/data.service';
+
 
 @Component({
   selector: 'app-solicitudes',

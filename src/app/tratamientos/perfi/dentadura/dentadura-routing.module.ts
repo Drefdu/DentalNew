@@ -9,17 +9,13 @@ const routes: Routes = [
     component: DentaduraPage
   },
   {
-    path: 'form-diente',
+    path: 'form-diente/:dienteId',
     loadChildren: () => import('./form-diente/form-diente.module').then( m => m.FormDientePageModule)
   },
   {
-    path: 'edit-diente',
+    path: 'edit-diente/:dienteId',
     loadChildren: () => import('./edit-diente/edit-diente.module').then( m => m.EditDientePageModule)
   },
-  {
-    path: ':dienteId',
-    loadChildren: () => import('./edit-diente/edit-diente.module').then( m => m.EditDientePageModule)
-  }
 ];
 
 @NgModule({

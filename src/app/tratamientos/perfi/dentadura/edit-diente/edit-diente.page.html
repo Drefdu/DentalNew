@@ -23,8 +23,8 @@
         type="text"
         id="nombrediente"
         class="form-control"
-        readonly
         [value]=""
+        #Nombre
       />
     </div>
     <br>
@@ -34,7 +34,7 @@
         type="text"
         id="tratamiento"
         class="form-control"
-        #tratamiento
+        #Tratamiento
       />
     </div>
     <br>
@@ -43,13 +43,12 @@
       <input
         type="text"
         id="estadodiente"
-        readonly
         class="form-control"
-        #Apellidos
+        #Estado
       />
     </div>
     <br>
-    <ion-button expand="full" shape="round"
+    <ion-button expand="full" shape="round" (click)="Diente(Nombre, Tratamiento, Estado)"
       >Enviar respuestas</ion-button
     >
   </div>

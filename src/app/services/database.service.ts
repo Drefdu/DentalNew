@@ -15,6 +15,7 @@ export class DatabaseService {
   eventos = "http://localhost:4000/eventos"
   puslo = "http://localhost:4000/pulso";
   chat = "http://localhost:4000/mensajes/";
+  dientes = "http://localhost:4000/dientes/";
 
 
   constructor(private http: HttpClient) { }
@@ -114,6 +115,18 @@ export class DatabaseService {
 
   getuserMensajes(id: String):Observable<any>{
     return this.http.get(this.chat + id);
+  }
+
+  addDiente(diente: {}):Observable<any>{
+    return this.http.post(this.dientes, diente);
+  }
+
+  getDiente(dienteId: String):Observable<any>{
+    return this.http.get(this.dientes + dienteId);
+  }
+
+  updateDiente(diente: {}, dienteId: String):Observable<any>{
+    return this.http.put(this.dientes + dienteId, diente);
   }
 }
 
