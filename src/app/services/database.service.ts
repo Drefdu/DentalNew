@@ -26,6 +26,10 @@ export class DatabaseService {
     return this.http.get("http://localhost:4000/users/" + uid);
   }
 
+  getPulse():Observable<any>{
+    return this.http.get("http://localhost:4000/pulso/");
+  }
+
   addUser(uid: {}):Observable<any>{
     return this.http.post(this.url, uid);
   }

@@ -1,0 +1,207 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="perfil">Regresar</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+<ion-content >
+  <div class="header">
+
+  </div>
+  <div class="wrapper"><br>
+    <h1>Tomando pulso cardiaco</h1> <br>
+    <div class="card" style="width: 80%; height: 30%;">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-1 107.393 644 201.975" width="640" height="197.97">
+        <defs>
+          <path d="M640 243.73H499.33l-3.6-12.51-2.61 12.51h-43.43l-6.27-14.25-5.65 14.25h-82.46l-6.42-33.54L332 243.73l-13-135.34-9.86 150.43-14.69-39.1-13.07 86.65-9.56-110.18-10.03 47.54h-95.62l-7.61-14.25-9.52 16.77-9.42-47.8-10.47 74.38-10.37-43.35-6.56 14.25H0" id="b" />
+        </defs>
+        <filter id="a" x="-9" y="99.39" width="659" height="216.97" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse">
+          <feFlood/>
+          <feComposite in2="SourceAlpha" operator="in"/>
+          <feGaussianBlur stdDeviation="1"/>
+          <feOffset dx="1" dy="1" result="afterOffset"/>
+          <feFlood flood-color="#000" flood-opacity=".5"/>
+          <feComposite in2="afterOffset" operator="in"/>
+          <feMorphology operator="dilate" radius="1"/>
+          <feComposite in2="SourceAlpha" operator="out"/>
+        </filter>
+        <path d="M640 243.73H499.33l-3.6-12.51-2.61 12.51h-43.43l-6.27-14.25-5.65 14.25h-82.46l-6.42-33.54L332 243.73l-13-135.34-9.86 150.43-14.69-39.1-13.07 86.65-9.56-110.18-10.03 47.54h-95.62l-7.61-14.25-9.52 16.77-9.42-47.8-10.47 74.38-10.37-43.35-6.56 14.25H0" fill="none" stroke="#fff" filter="url(#a)"/>
+        <g>
+          <use xlink:href="#b" fill-opacity="0" stroke="#06748C" />
+        </g></svg>
+    </div> <br>
+    <h1>Esperando: {{cardio.valor}}</h1> <br>
+    <ion-button color="primary" style="width: 80%;" (click)="pulseUser()">Calcular</ion-button>
+    <br> <br>
+    <div class="d-flex justify-content-center" >
+      <div class="fondo h-100" id="container-info" style=" width: 80%;">
+        <div class="d-flex justify-content-center" >
+          <div class="p-0 w-100">
+            <ion-segment
+              class="pantallas"
+              [(ngModel)]="selectTabs"
+              value="default" 
+            >
+              <ion-segment-button value="cardio1">
+                <ion-label>1/12</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="cardio2">
+                <ion-label>13/35</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="cardio3">
+                <ion-label>36/64</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="cardio4">
+                <ion-label>65+</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </div>
+        </div>
+        <br><br>
+        <div *ngIf="selectTabs == 'cardio1'" style="width: 100%;">
+          <div >
+            <div class="table" style="width: 100% !important;">
+              <div class="headerT">Rango de Edad</div>
+              <div class="headerT">Peligroso (bpm)</div>
+              <div class="headerT">Normal (bpm)</div>
+            </div>
+            <div class="row">
+              <div>1-2</div>
+              <div>&lt; 70</div>
+              <div>80-130</div>
+            </div>
+            <div class="row">
+              <div>3-4</div>
+              <div>&lt; 70</div>
+              <div>80-120</div>
+            </div>
+            <div class="row">
+              <div>5-6</div>
+              <div>&lt; 65</div>
+              <div>75-115</div>
+            </div>
+            <div class="row">
+              <div>7-9</div>
+              <div>&lt; 60</div>
+              <div>70-110</div>
+            </div>
+            <div class="row">
+              <div>10-12</div>
+              <div>&lt; 60</div>
+              <div>65-105</div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="selectTabs == 'cardio2'">
+          <div>
+            <div class="table">
+              <div class="headerT">Rango de Edad</div>
+              <div class="headerT">Peligroso (bpm)</div>
+              <div class="headerT">Normal (bpm)</div>
+            </div>
+            <div class="row">
+              <div>13-14</div>
+              <div>&lt; 59</div>
+              <div>60-110</div>
+            </div>
+            <div class="row">
+              <div>15-17</div>
+              <div>&lt; 59</div>
+              <div>60-110</div>
+            </div>
+            <div class="row">
+              <div>18-25</div>
+              <div>&lt; 61</div>
+              <div>66-73</div>
+            </div>
+            <div class="row">
+              <div>26-30</div>
+              <div>&lt; 62</div>
+              <div>66-74</div>
+            </div>
+            <div class="row">
+              <div>31-35</div>
+              <div>&lt; 60</div>
+              <div>66-73</div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="selectTabs == 'cardio3'">
+          <div>
+            <div class="table">
+              <div class="headerT">Rango de Edad</div>
+              <div class="headerT">Peligroso (bpm)</div>
+              <div class="headerT">Normal (bpm)</div>
+            </div>
+            <div class="row">
+              <div>36-39</div>
+              <div>&lt; 62</div>
+              <div>63-75</div>
+            </div>
+            <div class="row">
+              <div>40-44</div>
+              <div>&lt; 62</div>
+              <div>63-75</div>
+            </div>
+            <div class="row">
+              <div>45-49</div>
+              <div>&lt; 63</div>
+              <div>64-77</div>
+            </div>
+            <div class="row">
+              <div>50-54</div>
+              <div>&lt; 63</div>
+              <div>64-76</div>
+            </div>
+            <div class="row">
+              <div>55-64</div>
+              <div>&lt; 61</div>
+              <div>62-76</div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="selectTabs == 'cardio4'">
+          <div >
+            <div class="table">
+              <div class="headerT">Rango de Edad</div>
+              <div class="headerT">Peligroso (bpm)</div>
+              <div class="headerT">Normal (bpm)</div>
+            </div>
+            <div class="row">
+              <div>65-69</div>
+              <div>&lt; 61</div>
+              <div>62-73</div>
+            </div>
+            <div class="row">
+              <div>70-74</div>
+              <div>&lt; 61</div>
+              <div>62-74</div>
+            </div>
+            <div class="row">
+              <div>75-79</div>
+              <div>&lt; 61</div>
+              <div>62-73</div>
+            </div>
+            <div class="row">
+              <div>80-84</div>
+              <div>&lt; 61</div>
+              <div>62-73</div>
+            </div>
+            <div class="row">
+              <div>85+</div>
+              <div>&lt; 61</div>
+              <div>62-74</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>
