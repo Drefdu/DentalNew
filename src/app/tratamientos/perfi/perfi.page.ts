@@ -114,4 +114,28 @@ export class PerfiPage implements OnInit {
       }
     );
   }
+
+  addPulso(){
+    let pulso ={
+      FichaId: this.user._id
+    }
+    
+    this.database.getPulso(this.user._id).subscribe((data) => {
+      if(data.msg == "El usuario no existe")
+      {
+        this.database.addPulso(pulso).subscribe((data) => {
+
+        }, (error) => {
+          console.log(error)
+        })
+      }
+      else{
+        console.log("Pulso ya registrado");
+      }
+    }, (erro) => {
+      console.log(erro);
+    })
+  }
+  
+
 }
