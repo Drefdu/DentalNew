@@ -30,6 +30,7 @@ export class PerfiPage implements OnInit {
   isModalOpen = false;
   isModalOpenTwo = false;
   foto: any = {};
+  datos:any={};
   presentingElement: any = null;
   public alertButtons = ['OK'];
 
@@ -78,7 +79,11 @@ export class PerfiPage implements OnInit {
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
         this.user = user;
-        console.log(this.user);
+        this.database.getUser(this.user.uid).subscribe(data => {
+          this.datos=data;
+          console.log(this.datos);
+        });
+        
       }
     });
     

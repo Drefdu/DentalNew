@@ -26,7 +26,7 @@ export class TratamientosPage implements OnInit {
   app = initializeApp(environment.firebaseConfig)
   auth = getAuth();
   provider = new GoogleAuthProvider();
-
+  datos:any={};
 
 
   constructor(
@@ -40,7 +40,11 @@ export class TratamientosPage implements OnInit {
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
         this.user = user;
-        console.log(this.user);
+        this.database.getUser(this.user.uid).subscribe(data => {
+          this.datos=data;
+          console.log(this.datos);
+        });
+        
       }
     });
 

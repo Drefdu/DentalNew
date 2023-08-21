@@ -16,6 +16,7 @@ export class SolicitudPage implements OnInit {
   app = initializeApp(environment.firebaseConfig);
   auth = getAuth();
   provider = new GoogleAuthProvider();
+  datos:any={};
 
   fichas: any = [];
   public results = [...this.fichas];
@@ -32,6 +33,10 @@ export class SolicitudPage implements OnInit {
     onAuthStateChanged(this.auth, async (user) => {
       if (user) {
         this.user = user;
+        this.database.getUser(this.user.uid).subscribe(data => {
+          this.datos=data;
+          console.log(this.datos);
+        });
         await this.database.getFichas(this.user.uid).subscribe(
           (data) => {
             this.fichas = data;
