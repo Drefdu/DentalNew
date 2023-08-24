@@ -4,10 +4,10 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="ficha-user"></ion-back-button>
       </ion-buttons>
-      <button slot="end" class="contB" [routerLink]="['../update-user', datosFicha._id]">
+      <button slot="end" class="contB" [routerLink]="['../update-user', datosFicha._id]" *ngIf="datos.admin === 'false'">
         <ion-icon class="editar" name="pencil-outline" ></ion-icon>
       </button>
-      <ion-buttons slot="end">
+      <ion-buttons slot="end" *ngIf="datos.admin === 'false'">
         <ion-button class="contB" (click)="deleteUser()">
           <ion-icon name="trash-outline"></ion-icon>
         </ion-button>
