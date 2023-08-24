@@ -26,11 +26,6 @@ export class PulsePage implements OnInit {
       const recipeId = paramMap.get('userId');
       this.userId = recipeId;
     });
-  }
-
-
-
-  pulseUser() {
     const intervalTime = 10000; 
     const pulseInterval = setInterval(() => {
       this.database.getPulse().subscribe(data => {
@@ -42,6 +37,10 @@ export class PulsePage implements OnInit {
       });
     }, intervalTime);
   }
+
+
+
+
   
 
 }

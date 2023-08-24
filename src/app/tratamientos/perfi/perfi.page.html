@@ -24,7 +24,7 @@
         <ion-icon name="calendar-clear-outline" slot="start"></ion-icon>
         <ion-label>Agendar cita</ion-label>
       </ion-item>
-      <ion-item lines="none" *ngIf="datos.admin === 'true'" href="/ficha-user">
+      <ion-item lines="none" href="/ficha-user">
         <ion-icon name="person-outline" slot="start"></ion-icon>
         <ion-label>Fichas de paciente</ion-label>
       </ion-item>
@@ -172,23 +172,7 @@
             color="light"
             class="p-3"
             detail="false"
-            id="open-modal"
-          >
-            <ion-icon
-              name="calendar-outline"
-              slot="start"
-              class="icon"
-            ></ion-icon>
-            <ion-label>Historial de citas</ion-label>
-            <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
-          </ion-item>
-          <ion-item
-            button
-            lines="none"
-            color="light"
-            class="p-3"
-            detail="false"
-            (click)="addPulso()"
+            routerLink = "pulse"
           >
             <ion-icon name="pulse-outline" slot="start" class="icon"></ion-icon>
             <ion-label>Medir Pulso</ion-label>
