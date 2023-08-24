@@ -32,7 +32,7 @@
         <ion-icon name="calendar-outline" slot="start"></ion-icon>
         <ion-label>Solicitudes de citas</ion-label>
       </ion-item>
-      <ion-item lines="none" href="/chat">
+      <ion-item lines="none" *ngIf="datos.admin === 'false'"  href="/chat">
         <ion-icon name="chatbox-outline" slot="start"></ion-icon>
         <ion-label>Chat</ion-label>
       </ion-item>
